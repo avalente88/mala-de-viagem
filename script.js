@@ -51,6 +51,15 @@ document.addEventListener('DOMContentLoaded', () => {
     PE: [
       { title: 'Peru, Argentina e relaxe no Brasil', href: 'Plans/Americas/plano-peru-argentina-brasil.html' }
     ],
+    // Chile
+    CL: [
+      { title: 'Patagónia e Rio de Janeiro', href: 'Plans/Americas/patagonia-e-rio.html' }
+    ],
+    // Argentina
+    AR: [
+      { title: 'Patagónia e Rio de Janeiro', href: 'Plans/Americas/patagonia-e-rio.html' },
+      { title: 'Peru, Argentina e relaxe no Brasil', href: 'Plans/Americas/plano-peru-argentina-brasil.html' }
+    ],
     // Portugal (exemplo vazio)
     PT: [
       // { title: 'Portugal: Alentejo Essencial', href: '/plans/portugal-alentejo.html' }
