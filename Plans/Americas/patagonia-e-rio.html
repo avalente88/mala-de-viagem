@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Plano de Viagem — Patagónia 2026</title>
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400..700&family=Great+Vibes&display=swap" rel="stylesheet">
+<script>
+  // Aplica data-labels a todas as TD com base no texto dos TH
+  function applyDataLabels(table) {
+    if (!table) return;
+    const ths = Array.from(table.querySelectorAll('thead th'));
+    if (!ths.length) return;
+
+    // Extrai os textos dos TH (tratando espaços e quebras)
+    const headers = ths.map(th => (th.textContent || '').replace(/\s+/g, ' ').trim());
+
+    // Aplica em cada TD
+    table.querySelectorAll('tbody tr').forEach(tr => {
+      Array.from(tr.children).forEach((td, i) => {
+        const label = headers[i] || '';
+        if (label) td.setAttribute('data-label', label);
+      });
+    });
+  }
+
+  // Aplica aos seletores desejados
+  function makeStackedTables(...selectors) {
+    selectors.forEach(sel => {
+      document.querySelectorAll(sel).forEach(applyDataLabels);
+    });
+  }
+
+  // Corre quando o DOM estiver pronto
+  document.addEventListener('DOMContentLoaded', function() {
+    makeStackedTables('#voos table', '#hoteis table');
+
+    // OPCIONAL: se a tua página renderiza/atualiza tabelas via JS depois do load
+    // ativa este observer para voltar a aplicar labels quando o tbody mudar
+    const observer = new MutationObserver(() => {
+      makeStackedTables('#voos table', '#hoteis table');
+    });
+    document.querySelectorAll('#voos table tbody, #hoteis table tbody').forEach(tbody => {
+      observer.observe(tbody, { childList: true, subtree: true });
+    });
+  });
+</script>
+
+</head>
+<body>
+  <!-- Top Navigation Bar -->
+  <nav class="top-navbar">
+      <ul>
+          <li><a href="../../index.html">Home</a></li>
+          <li><a href="../../contacts.html">Contactos</a></li>
+      </ul>
+  </nav>
+
+  <!-- Hero -->
+  <header class="header-top" id="home">
+    <div class="profile-container">
+      <img src="../../Images/Designer.png" alt="Mala de Sonhos by Ana Valente">
+    </div>
+
+  </header>
+
+  <main class="container">
+
+    <!-- Resumo -->
+    <section id="resumo" class="card">
+      <h2 class="section-title">Resumo</h2>
+      <div class="grid-2">
+        <div>
+          <p><strong>Itinerário:</strong> Lisboa → Santiago do Chile → Patagónia Chilena → Patagónia Argentina → Buenos Aires → Rio de Janeiro → Lisboa</p>
+        </div>
+        <div class="right">
+          <p class="total">TOTAL: 5&nbsp;135,50&nbsp;€</p>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Galeria de fotos do destino -->
+    <section id="fotos" class="card">
+      <h2 class="section-title">Fotos do destino</h2>
+      <div class="gallery">
+        <figure>
+          <img src="../../Images/CL/santiago-chile.jpg" alt="Santiago do Chile" />
+          <figcaption>Santiago</figcaption>
+        </figure>
+        <figure>
+          <img src="../../Images/CL/torres-del-paine.jpg" alt="Torres del Paine" />
+          <figcaption>Torres del Paine</figcaption>
+        </figure>
+        <figure>
+          <img src="../../Images/CL/punta-arenas.jpg" alt="Punta Arenas" />
+          <figcaption>Punta Arenas</figcaption>
+        </figure>
+        <figure>
+          <img src="../../Images/CL/ptwilliams.jpg" alt="Porto Williams" />
+          <figcaption>Porto Williams</figcaption>
+        </figure>
+        <figure>
+          <img src="../../Images/AR/terra-do-fogo.jpg" alt="Ushuaia - terra do fogo" />
+          <figcaption>Ushuaia - terra do fogo</figcaption>
+        </figure>
+        <figure>
+          <img src="../../Images/AR/el-calafate.jpg" alt="El Calafate" />
+          <figcaption>El Calafate</figcaption>
+        </figure>
+        <figure>
+          <img src="../../Images/AR/buenos-aires.jpg" alt="Buenos Aires" />
+          <figcaption>Buenos Aires</figcaption>
+        </figure>
+        <figure>
+          <img src="../../Images/br/rio-janeiro.jpg" alt="Rio de Janeiro" />
+          <figcaption>Rio de Janeiro</figcaption>
+        </figure>
+      </div>
+      </section>
+
+<section id="nota" class="card">
+  <div class="notice notice-banner" role="note" aria-label="Aviso">
+    Este plano é indicativo para se ter uma noção de duração, escalas de voos e preço médio de hotéis.
+    Os preços estão susceptíves a alterações. A pesquisa foi feita com 8 meses de antecedência. 
+  </div>
+  <!-- resto do conteúdo -->
+</section>
+
+    <!-- Voos -->
+    <section id="voos" class="card">
+      <h2 class="section-title">Voos</h2>
+      <table aria-label="Voos">
+        <thead>
+          <tr>
+            <th>Voos</th>
+            <th>Data</th>
+            <th>Origem</th>
+            <th>Destino</th>
+            <th>Partida</th>
+            <th>Chegada</th>
+            <th>Tempo</th>
+            <th>Escala</th>
+            <th class="right">Preço</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>LA8147 + LA753</td>
+            <td>03-nov.-26</td>
+            <td>Lisboa - LIS</td>
+            <td>Santiago - SCL</td>
+            <td>09:40</td>
+            <td>21:10</td>
+            <td>14:30</td>
+            <td>01:10 em São Paulo</td>
+            <td class="right">736,00&nbsp;€</td>
+          </tr>
+          <tr>
+            <td>LA1</td>
+            <td>06-nov.-26</td>
+            <td>Santiago - SCL</td>
+            <td>Puerto Natales - PNT</td>
+            <td>08:50</td>
+            <td>13:17</td>
+            <td>04:27</td>
+            <td></td>
+            <td class="right">146,00&nbsp;€</td>
+          </tr>
+          <tr>
+            <td>V5420</td>
+            <td>11-nov.-26</td>
+            <td>Punta Arenas - PUQ</td>
+            <td>Puerto Williams - WPU</td>
+            <td>10:00</td>
+            <td>11:15</td>
+            <td>01:15</td>
+            <td></td>
+            <td class="right">112,00&nbsp;€</td>
+          </tr>
+          <tr>
+            <td>AR1895</td>
+            <td>14-nov.-26</td>
+            <td>Ushuaia - USH</td>
+            <td>El Calafate - FTE</td>
+            <td>11:20</td>
+            <td>12:40</td>
+            <td>1:20</td>
+            <td></td>
+            <td class="right">21O,00&nbsp;€</td>
+          </tr>
+          <tr>
+            <td>AR1897</td>
+            <td>16-nov.-26</td>
+            <td>El Calafate - FTE</td>
+            <td>Buenos Aires - AEP</td>
+            <td>16:30</td>
+            <td>19:30</td>
+            <td>3:00</td>
+            <td></td>
+            <td class="right">90,00&nbsp;€</td>
+          </tr>
+          <tr>
+            <td>AR1264</td>
+            <td>18-nov.-26</td>
+            <td>Buenos Aires - AEP</td>
+            <td>Rio de Janeiro - GIG</td>
+            <td>09:50</td>
+            <td>12:45</td>
+            <td>2:55</td>
+            <td></td>
+            <td class="right">183,00&nbsp;€</td>
+          </tr>
+          <tr>
+            <td>TP74</td>
+            <td>23-nov.-26</td>
+            <td>Rio de Janeiro - GIG</td>
+            <td>Lisboa - LIS</td>
+            <td>16:35</td>
+            <td>05:15</td>
+            <td>9:40</td>
+            <td></td>
+            <td class="right">699,00&nbsp;€</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Hotéis (com links) -->
+    <section id="hoteis" class="card">
+      <h2 class="section-title">Hotéis</h2>
+      <table aria-label="Hotéis">
+        <thead>
+          <tr>
+            <th>Hotel</th>
+            <th>Local</th>
+            <th>Check‑in</th>
+            <th>Check‑out</th>
+            <th>Noites</th>
+            <th>Regime</th>
+            <th class="right">Preço</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><a class="hotel" href="https://www.booking.com/hotel/cl/plaza-san-francisco.pt-pt.html?aid=304142&label=gen173nr-10CAEoggI46AdIM1gEaEaIAQGYATO4AQfIAQzYAQPoAQH4AQGIAgGoAgG4AszVlMwGwAIB0gIkN2IxMTc4MTYtNjU5Yi00NDYxLTlmMjMtZjQwMTlkZTAxZDVl2AIB4AIB&sid=957479400a6c1f6c3601ef700b18ccfb&all_sr_blocks=17627103_91910720_2_41_0_264227&checkin=2026-11-03&checkout=2026-11-06&dest_id=-901202&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=5&highlighted_blocks=17627103_91910720_2_41_0_264227&hpos=5&matching_block_id=17627103_91910720_2_41_0_264227&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=17627103_91910720_2_41_0_264227_42436&srepoch=1770335031&srpvid=26dda6b188dd0326&type=total&ucfs=1&" target="_blank" rel="noopener">Hotel Plaza San Francisco</a></td>
+            <td>Santiago</td>
+            <td>3 novembro</td>
+            <td>6 novembro</td>
+            <td>3</td>
+            <td>PA</td>
+            <td class="right">180,00&nbsp;€</td>
+          </tr>
+          <tr>
+            <td><a class="hotel" href="https://www.booking.com/hotel/cl/costanera-puerto-natales.pt-pt.html?aid=304142&label=gen173nr-10CAEoggI46AdIM1gEaEaIAQGYATO4AQfIAQzYAQPoAQH4AQGIAgGoAgG4AszVlMwGwAIB0gIkN2IxMTc4MTYtNjU5Yi00NDYxLTlmMjMtZjQwMTlkZTAxZDVl2AIB4AIB&sid=957479400a6c1f6c3601ef700b18ccfb&all_sr_blocks=933751501_365458647_2_1_0_220813&checkin=2026-11-06&checkout=2026-11-09&dist=0&group_adults=2&group_children=0&hapos=3&highlighted_blocks=933751501_365458647_2_1_0_220813&hpos=3&matching_block_id=933751501_365458647_2_1_0_220813&nflt=roomfacility%3D38%3Breview_score%3D80%3Bht_id%3D204&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=933751501_365458647_2_1_0_220813_77836&srepoch=1770335103&srpvid=befca6eca70c0070&type=total&ucfs=1&" target="_blank" rel="noopener">Hotel Costanera</a></td>
+            <td>Puerto Natales</td>
+            <td>6 novembro</td>
+            <td>9 novembro</td>
+            <td>3</td>
+            <td>PA</td>
+            <td class="right">330,00&nbsp;€</td>
+          </tr>
+          <tr>
+            <td><a class="hotel" href="https://www.booking.com/hotel/cl/cabo-de-hornos.pt-pt.html?aid=304142&label=gen173nr-10CAEoggI46AdIM1gEaEaIAQGYATO4AQfIAQzYAQPoAQH4AQGIAgGoAgG4AszVlMwGwAIB0gIkN2IxMTc4MTYtNjU5Yi00NDYxLTlmMjMtZjQwMTlkZTAxZDVl2AIB4AIB&sid=957479400a6c1f6c3601ef700b18ccfb&all_sr_blocks=27440301_89155844_0_41_0&checkin=2026-11-09&checkout=2026-11-11&dest_id=-897667&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&highlighted_blocks=27440301_89155844_0_41_0&hpos=1&matching_block_id=27440301_89155844_0_41_0&nflt=review_score%3D80%3Broomfacility%3D38&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=27440301_89155844_0_41_0__53000&srepoch=1770335215&srpvid=1f8ea7295e790367&type=total&ucfs=1&" target="_blank" rel="noopener">Hotel Cabo de Hornos</a></td>
+            <td>Punta Arenas</td>
+            <td>9 novembro</td>
+            <td>11 novembro</td>
+            <td>2</td>
+            <td>PA</td>
+            <td class="right">224,50&nbsp;€</td>
+          </tr>
+          <tr>
+            <td><a class="hotel" href="https://www.booking.com/hotel/cl/errante-ecolodge.pt-pt.html?aid=304142&label=gen173nr-10CAEoggI46AdIM1gEaEaIAQGYATO4AQfIAQzYAQPoAQH4AQGIAgGoAgG4AszVlMwGwAIB0gIkN2IxMTc4MTYtNjU5Yi00NDYxLTlmMjMtZjQwMTlkZTAxZDVl2AIB4AIB&sid=957479400a6c1f6c3601ef700b18ccfb&all_sr_blocks=191541404_413431291_2_40_0&checkin=2026-11-11&checkout=2026-11-12&dest_id=-897524&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=2&highlighted_blocks=191541404_413431291_2_40_0&hpos=2&matching_block_id=191541404_413431291_2_40_0&nflt=roomfacility%3D38%3Breview_score%3D80&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=191541404_413431291_2_40_0__25704&srepoch=1770335292&srpvid=e19ba7527f0f00ce&type=total&ucfs=1&" target="_blank" rel="noopener">Errante Ecolodge</a></td>
+            <td>Puerto Williams</td>
+            <td>11 novembro</td>
+            <td>12 novembro</td>
+            <td>1</td>
+            <td>PA</td>
+            <td class="right">109,00&nbsp;€</td>
+          </tr>
+          <tr>
+            <td><a class="hotel" href="https://www.booking.com/hotel/ar/canal-beagle-ushuaia.pt-pt.html?aid=304142&label=gen173nr-10CAEoggI46AdIM1gEaEaIAQGYATO4AQfIAQzYAQPoAQH4AQGIAgGoAgG4AszVlMwGwAIB0gIkN2IxMTc4MTYtNjU5Yi00NDYxLTlmMjMtZjQwMTlkZTAxZDVl2AIB4AIB&sid=957479400a6c1f6c3601ef700b18ccfb&all_sr_blocks=801707902_341407502_2_1_0&checkin=2026-11-12&checkout=2026-11-14&dest_id=-1018179&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=2&highlighted_blocks=801707902_341407502_2_1_0&hpos=2&matching_block_id=801707902_341407502_2_1_0&nflt=review_score%3D80%3Broomfacility%3D38%3Bht_id%3D204&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=801707902_341407502_2_1_0__36320&srepoch=1770335402&srpvid=4bada7858a59031c&type=total&ucfs=1&" target="_blank" rel="noopener">Hotel Canal Beagle</a></td>
+            <td>Ushuaia</td>
+            <td>12 novembro</td>
+            <td>14 novembro</td>
+            <td>2</td>
+            <td>Tour</td>
+            <td class="right">154,00&nbsp;€</td>
+          </tr>
+          <tr>
+            <td><a class="hotel" href="https://www.booking.com/hotel/ar/esplendor-calafate.pt-pt.html?aid=304142&label=gen173nr-10CAEoggI46AdIM1gEaEaIAQGYATO4AQfIAQzYAQPoAQH4AQGIAgGoAgG4AszVlMwGwAIB0gIkN2IxMTc4MTYtNjU5Yi00NDYxLTlmMjMtZjQwMTlkZTAxZDVl2AIB4AIB&sid=957479400a6c1f6c3601ef700b18ccfb&all_sr_blocks=7925609_90438237_3_1_0&checkin=2026-11-14&checkout=2026-11-16&dest_id=-985388&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=14&highlighted_blocks=7925609_90438237_3_1_0&hpos=14&matching_block_id=7925609_90438237_3_1_0&nflt=roomfacility%3D38%3Bht_id%3D204%3Breview_score%3D80&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=7925609_90438237_3_1_0__65484&srepoch=1770335465&srpvid=af30a7ab11aa009d&type=total&ucfs=1&" target="_blank" rel="noopener">Esplendor by Wyndham</a></td>
+            <td>El Calafate</td>
+            <td>14 novembro</td>
+            <td>16 abril</td>
+            <td>2</td>
+            <td>PA</td>
+            <td class="right">277,50&nbsp;€</td>
+          </tr>
+          <tr>
+            <td><a class="hotel" href="https://www.palosantohotel.com/" target="_blank" rel="noopener">Palo Santo Hotel</a></td>
+            <td>Buenos Aires</td>
+            <td>16 novembro</td>
+            <td>18 novembro</td>
+            <td>1</td>
+            <td>PA</td>
+            <td class="right">223,00&nbsp;€</td>
+          </tr>
+          <tr>
+            <td><a class="hotel" href="https://www.booking.com/hotel/br/rio-de-janeiro.pt-pt.html?aid=304142&label=gen173nr-10CAEoggI46AdIM1gEaEaIAQGYATO4AQfIAQzYAQPoAQH4AQGIAgGoAgG4AszVlMwGwAIB0gIkN2IxMTc4MTYtNjU5Yi00NDYxLTlmMjMtZjQwMTlkZTAxZDVl2AIB4AIB&sid=957479400a6c1f6c3601ef700b18ccfb&all_sr_blocks=1182540_95134727_2_34_0&checkin=2026-11-18&checkout=2026-11-23&dest_id=11825&dest_type=hotel&dist=0&group_adults=2&group_children=0&hapos=1&highlighted_blocks=1182540_95134727_2_34_0&hpos=1&matching_block_id=1182540_95134727_2_34_0&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=1182540_95134727_2_34_0__1108383&srepoch=1770335697&srpvid=d5b2a82379c104be&type=total&ucfs=1&" target="_blank" rel="noopener">Fairmont Rio</a></td>
+            <td>Rio de Janeiro</td>
+            <td>18 novembro</td>
+            <td>23 novembro</td>
+            <td>5</td>
+            <td>PA</td>
+            <td class="right">1130,00&nbsp;€</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="muted">👉 Os preços indicados são por pessoa em quarto duplo.</p>
+    </section>
+
+    <!-- ========================= -->
+<!-- PLANO DIÁRIO COM DETALHES EM LINHA -->
+<!-- ========================= -->
+<section id="plano" class="card">
+  <h2 class="section-title">Plano diário</h2>
+
+  <!-- Legenda e ações -->
+  <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; margin-bottom:10px;">
+    <p class="muted" style="margin:0;">
+      <span class="tag tag-voo">avião</span>
+      <span class="tag tag-comboio">comboio</span>
+      <span class="tag tag-estrada">estrada</span>
+      <span class="tag tag-tour">tour</span>
+      <span class="tag tag-autocarro">autocarro</span>
+      <span class="tag tag-ferry">ferry</span>
+    </p>
+    <div style="display:flex; gap:8px;">
+      <button type="button" class="btn-outline" id="expandAll">Expandir todos</button>
+      <button type="button" class="btn-outline" id="collapseAll">Ocultar todos</button>
+    </div>
+  </div>
+
+  <!-- Lista é gerada por JS -->
+  <div id="dailyList"></div>
+</section>
+
+<style>
+  /* Linhas “simples” do dia */
+  .day-line{
+    display:flex; align-items:center; justify-content:space-between;
+    border-left:4px solid #5dcbed; padding:10px 12px; margin:10px 0;
+    background:rgba(255,255,255,.8); border-radius:8px;
+  }
+  .day-line .left{ display:flex; gap:10px; align-items:center; flex-wrap:wrap; }
+  .day-line .date{ font-weight:700; color:#1F4E78; white-space:nowrap; }
+  .day-line .city{ color:#333; }
+
+  /* Tags de transporte (cores) */
+  .tag{ display:inline-block; padding:4px 8px; border-radius:12px; font-size:.85rem; line-height:1.2; color:#fff; }
+  .tag-voo{ background:#5dcbed; }        /* avião */
+  .tag-comboio{ background:#7cc576; }    /* comboio */
+  .tag-estrada{ background:#c293d8; }    /* estrada genérica */
+  .tag-tour{ background:#f0a36b; }       /* tour/expedição */
+  .tag-autocarro{ background:#8aa3ff; }  /* autocarro */
+  .tag-ferry{ background:#50bfa0; }      /* ferry/barco */
+
+  /* Botão estilo .tag usando a cor da antiga “táxi” (#f7b1c3) */
+  .btn-tag{
+    display:inline-block; border:none; cursor:pointer;
+    padding:4px 10px; border-radius:12px; font-size:.85rem; line-height:1.2;
+    background:#f7b1c3; color:#fff;
+  }
+  .btn-tag:hover{ filter:brightness(.95); }
+  .btn-tag:focus{ outline:2px solid #1F4E78; outline-offset:2px; }
+
+  /* Botões utilitários (expandir/ocultar) no topo */
+  .btn-outline{
+    background:transparent; color:#1F4E78; border:1px solid #1F4E78;
+    padding:6px 10px; border-radius:8px; cursor:pointer; font-size:.9rem;
+  }
+  .btn-outline:hover{ background:#1F4E78; color:#fff; }
+
+  /* Contentor de detalhes (expansion) */
+  .day-details{
+    padding:10px 12px 6px 12px; border-left:4px solid #c293d8;
+    background:rgba(255,255,255,.9); border-radius:0 0 8px 8px;
+    margin-top:-8px; display:none;
+  }
+  .day-details.open{ display:block; }
+
+  .group{ margin:8px 0; }
+  .group h4{ margin:6px 0 4px 0; color:#1F4E78; font-size:1rem; }
+  .bullet{ margin:3px 0; }
+</style>
+
+<script>
+  // ----------------------------
+  // Dados do plano por dia (Chile/Argentina/Brasil)
+  // Transporte: avião | tour | autocarro | ferry | (comboio/estrada se necessário)
+  // ----------------------------
+  const daysData = [
+    {
+      date: "03 novembro",
+      city: "Viagem para o Chile",
+      transport: [{ type: "avião", text: "" }],
+      details: [
+        { label: null, items: ["Viagem para Santiago, via São Paulo"] }
+      ]
+    },
+    {
+      date: "04 novembro",
+      city: "Visitar Santiago",
+      transport: [],
+      details: [
+        { label: null, items: [
+          "Começar pela Plaza de Armas (Catedral Metropolitana e edifícios históricos)",
+          "Visitar o Palacio de La Moneda",
+          "Almoço no Mercado Central ou no Bairro Lastarria",
+          "Tarde no Bairro Lastarria e no Museu Nacional de Belas Artes",
+          "Fim do dia no Cerro Santa Lucía para vista da cidade"
+        ] }
+      ]
+    },
+    {
+      date: "05 novembro",
+      city: "Visitar Santiago",
+      transport: [],
+      details: [
+        { label: null, items: [
+          "Visita ao Cerro San Cristóbal (vista da cidade e da Cordilheira dos Andes)",
+          "Após almoço: tour a uma vinícola (Concha y Toro, Santa Rita ou Undurraga)",
+          "Jantar em Providencia ou Vitacura"
+        ] }
+      ]
+    },
+    {
+      date: "06 novembro",
+      city: "Viagem para Puerto Natales",
+      transport: [{ type: "avião", text: "" }],
+      details: [
+        { label: null, items: [
+          "Passeio ao entardecer pela orla de Puerto Natales (fiordes e Monumento à Mão)"
+        ] }
+      ]
+    },
+    {
+      date: "07 novembro",
+      city: "Torres del Paine · Cavernas do Milodón",
+      transport: [{ type: "tour", text: "" }],
+      details: [
+        { label: null, items: [
+          "Saída de Puerto Natales para dia inteiro no Parque Nacional Torres del Paine",
+          "Visita às Cavernas do Milodón",
+          "Paradas: El Castillo, Laguna Amarga, lagos Nordenskjöld e Pehoé",
+          "Caminhada até o Salto Grande com vista do Mirador Cuernos",
+          "Região do Lago Grey: observar geleira e caminhada na floresta de lengas",
+          "Regresso a Puerto Natales no final do dia"
+        ] }
+      ]
+    },
+    {
+      date: "08 novembro",
+      city: "Balmaceda & Serrano (navegação)",
+      transport: [{ type: "tour", text: "" }],
+      details: [
+        { label: null, items: [
+          "Navegação pelo Fiorde Última Esperanza (paisagens, fauna, montanhas e cascatas)",
+          "Observação da Geleira Balmaceda",
+          "Caminhada ao mirante da Geleira Serrano (PN Bernardo O’Higgins)",
+          "Parada em estância para uísque com gelo milenar",
+          "Regresso a Puerto Natales ao fim da tarde"
+        ] }
+      ]
+    },
+    {
+      date: "09 novembro",
+      city: "Ida para Punta Arenas",
+      transport: [{ type: "autocarro", text: "" }],
+      details: [
+        { label: null, items: [
+          "Chegada e passeio pelo centro histórico",
+          "Plaza Muñoz Gamero, Mirador Cerro de la Cruz",
+          "Orla do Estreito de Magalhães"
+        ] }
+      ]
+    },
+    {
+      date: "10 novembro",
+      city: "Punta Arenas · Isla Magdalena",
+      transport: [],
+      details: [
+        { label: null, items: [
+          "Passeio à Isla Magdalena para ver pinguins"
+        ] }
+      ]
+    },
+    {
+      date: "11 novembro",
+      city: "Punta Arenas → Puerto Williams",
+      transport: [{ type: "avião", text: "" }],
+      details: [
+        { label: null, items: [
+          "Trekking curto no Parque Dientes de Navarino ou passeio pelo porto"
+        ] }
+      ]
+    },
+    {
+      date: "12 novembro",
+      city: "Puerto Williams → Ushuaia",
+      transport: [{ type: "ferry", text: "" }],
+      details: [
+        { label: null, items: [
+          "Travessia de barco (ferry) até Ushuaia — passeio e transporte"
+        ] }
+      ]
+    },
+    {
+      date: "13 novembro",
+      city: "Ushuaia",
+      transport: [],
+      details: [
+        { label: null, items: [
+          "Visita ao Parque Nacional Tierra del Fuego"
+        ] }
+      ]
+    },
+    {
+      date: "14 novembro",
+      city: "Ushuaia → El Calafate",
+      transport: [{ type: "avião", text: "" }],
+      details: [
+        { label: null, items: [
+          "Explorar o centro de El Calafate (artesanato e cafés)"
+        ] }
+      ]
+    },
+    {
+      date: "15 novembro",
+      city: "El Calafate · Perito Moreno",
+      transport: [],
+      details: [
+        { label: null, items: [
+          "Saída cedo rumo ao PN Los Glaciares para conhecer o Glaciar Perito Moreno"
+        ] }
+      ]
+    },
+    {
+      date: "16 novembro",
+      city: "El Calafate → Buenos Aires",
+      transport: [{ type: "avião", text: "" }],
+      details: [
+        { label: null, items: [
+          "De manhã: Glaciarium ou passeio pelo Lago Argentino",
+          "Preparar tudo para o voo para Buenos Aires"
+        ] }
+      ]
+    },
+    {
+      date: "17 novembro",
+      city: "Buenos Aires",
+      transport: [],
+      details: [
+        { label: null, items: [
+          "City tour Hop On Hop Off",
+          "Visitar Palermo e La Boca",
+          "Café no centro histórico e passagem pelo marco da Mafalda"
+        ] }
+      ]
+    },
+    {
+      date: "18 novembro",
+      city: "Ida para o Rio de Janeiro",
+      transport: [{ type: "avião", text: "" }],
+      details: [
+        { label: null, items: [
+          "Voo para o Rio de Janeiro para dias de descanso"
+        ] }
+      ]
+    },
+    {
+      date: "19 novembro",
+      city: "Rio de Janeiro",
+      transport: [],
+      details: [
+        { label: null, items: [
+          "Praça XV e Paço Imperial",
+          "Biblioteca do Real Gabinete Português de Leitura",
+          "Pausa na Confeitaria Colombo",
+          "Jantar animado na Lapa"
+        ] }
+      ]
+    },
+    {
+      date: "20 novembro",
+      city: "Rio de Janeiro",
+      transport: [],
+      details: [
+        { label: null, items: [
+          "Subida ao Cristo Redentor",
+          "Bairro de Santa Teresa (ateliês, ruas de paralelepípedos, Parque das Ruínas)"
+        ] }
+      ]
+    },
+    {
+      date: "21 novembro",
+      city: "Rio de Janeiro",
+      transport: [],
+      details: [
+        { label: null, items: [
+          "Manhã em Copacabana e Ipanema (calçadão e praia)",
+          "Tarde: bondinho ao Pão de Açúcar (vista da Baía de Guanabara)",
+          "Passeio pela Urca e jantar à beira‑mar"
+        ] }
+      ]
+    },
+    {
+      date: "22 novembro",
+      city: "Rio de Janeiro",
+      transport: [],
+      details: [
+        { label: null, items: [
+          "Manhã no Jardim Botânico",
+          "Almoço próximo à Lagoa Rodrigo de Freitas",
+          "Fim do dia no Leblon"
+        ] }
+      ]
+    },
+    {
+      date: "23 novembro",
+      city: "Regresso a Lisboa",
+      transport: [{ type: "avião", text: "" }],
+      details: [
+        { label: null, items: [
+          "Relaxar na piscina ou na praia antes do aeroporto"
+        ] }
+      ]
+    }
+  ];
+
+  // ----------------------------
+  // Helpers de UI
+  // ----------------------------
+  const colorByType = (type) => {
+    // normaliza para classes existentes (mantém novas onde aplicável)
+    if (type === "avião" || type === "voo") return "tag-voo";
+    if (type === "comboio") return "tag-comboio";
+    if (type === "tour") return "tag-tour";
+    if (type === "autocarro") return "tag-autocarro";
+    if (type === "ferry" || type === "barco") return "tag-ferry";
+    return "tag-estrada"; // fallback
+  };
+
+  // ----------------------------
+  // Render
+  // ----------------------------
+  const root = document.getElementById('dailyList');
+
+  daysData.forEach((d, idx) => {
+    // Linha simples
+    const line = document.createElement('div');
+    line.className = 'day-line';
+    line.setAttribute('data-index', idx);
+
+    const left = document.createElement('div');
+    left.className = 'left';
+
+    const date = document.createElement('div');
+    date.className = 'date';
+    date.textContent = d.date;
+
+    const city = document.createElement('div');
+    city.className = 'city';
+    city.textContent = '— ' + d.city;
+
+    left.appendChild(date);
+    left.appendChild(city);
+
+    // Tags de transporte
+    if (d.transport && d.transport.length){
+      d.transport.forEach(t => {
+        const span = document.createElement('span');
+        span.className = `tag ${colorByType(t.type)}`;
+        // mostrar o tipo com eventual horário/texto
+        const label = (t.type === 'voo') ? 'avião' : t.type;
+        span.textContent = t.text ? `${label} ${t.text}` : label;
+        left.appendChild(span);
+      });
+    }
+
+    // Botão "Ver detalhes"
+    const btn = document.createElement('button');
+    btn.className = 'btn-tag';
+    btn.type = 'button';
+    btn.setAttribute('aria-expanded', 'false');
+    btn.setAttribute('aria-controls', `details-${idx}`);
+    btn.textContent = 'Ver detalhes';
+
+    // Wrapper da linha
+    line.appendChild(left);
+    line.appendChild(btn);
+
+    // Bloco de detalhes (inicialmente fechado)
+    const details = document.createElement('div');
+    details.className = 'day-details';
+    details.id = `details-${idx}`;
+
+    (d.details || []).forEach(group => {
+      const wrap = document.createElement('div');
+      wrap.className = 'group';
+      if (group.label){
+        const h4 = document.createElement('h4');
+        h4.textContent = group.label;
+        wrap.appendChild(h4);
+      }
+      (group.items || []).forEach(it => {
+        const p = document.createElement('div');
+        p.className = 'bullet';
+        p.textContent = '• ' + it;
+        wrap.appendChild(p);
+      });
+      details.appendChild(wrap);
+    });
+
+    // Clique: abre/fecha
+    btn.addEventListener('click', () => {
+      const open = details.classList.contains('open');
+      details.classList.toggle('open');
+      btn.setAttribute('aria-expanded', String(!open));
+      btn.textContent = open ? 'Ver detalhes' : 'Ocultar';
+    });
+
+    // Anexa ao DOM
+    root.appendChild(line);
+    root.appendChild(details);
+  });
+
+  // ----------------------------
+  // Expandir / Ocultar todos
+  // ----------------------------
+  const expandAllBtn  = document.getElementById('expandAll');
+  const collapseAllBtn = document.getElementById('collapseAll');
+
+  expandAllBtn.addEventListener('click', () => {
+    document.querySelectorAll('.day-details').forEach((el, i) => {
+      el.classList.add('open');
+      const btn = document.querySelector(`.day-line[data-index="${i}"] .btn-tag`);
+      if(btn){ btn.setAttribute('aria-expanded','true'); btn.textContent = 'Ocultar'; }
+    });
+  });
+
+  collapseAllBtn.addEventListener('click', () => {
+    document.querySelectorAll('.day-details').forEach((el, i) => {
+      el.classList.remove('open');
+      const btn = document.querySelector(`.day-line[data-index="${i}"] .btn-tag`);
+      if(btn){ btn.setAttribute('aria-expanded','false'); btn.textContent = 'Ver detalhes'; }
+    });
+  });
+</script>
+  
+    <!-- Tours sugeridos -->
+    <section id="tours" class="card">
+      <h2 class="section-title">Tours e transportes obrigatórios</h2>
+      <ul>
+        <li><a class="hotel" href="https://www.civitatis.com/pt/puerto-natales/excursao-parque-torres-paine/?srsltid=AfmBOoqlb4zInSSvByn4AshX-cextxVRuesYNoJppdwp4XVTzurhgiCK#detalhes">Torres del Paine - a partir de Puerto Natales (79,00 €) </a></li>
+        <li><a class="hotel" href="https://www.civitatis.com/pt/puerto-natales/excursao-glaciares-balmaceda-serrano-barco/?srsltid=AfmBOorfhYy7mJUc1CIcWt9vPFQknZfAZ9B3bvj0-oD6xSP_8qzwDOMu">Glaciares Balmaceda e Serrano, de barco - a partir de Puerto Natales (118,00 €)</a></li>
+        <li><a class="hotel" href="https://www.civitatis.com/pt/puerto-natales/excursao-parque-torres-paine/?srsltid=AfmBOoqlb4zInSSvByn4AshX-cextxVRuesYNoJppdwp4XVTzurhgiCK#detalhes">Glaciar Perito Moreno - a partir de El Calafate (127,00 €)</a></li>
+        <li><a class="hotel" href="https://www.busbud.com/es-419/cl-cl/autobus-puerto-natales-punta-arenas/r-sem/4qu3wn-4qt9d1?utm_source=google&utm_medium=cpc&utm_campaign=route-bus-2025-es-chile&gad_source=1&gad_campaignid=22149382942&gbraid=0AAAAADiKd4VVWtSFlm7RDSodSexHJ-wDK&gclid=CjwKCAiAv5bMBhAIEiwAqP9GuLrjw8VhVp1gmlRrhUcNrnmpFEvKwSLLgNR9UgWe8F8yiAzzhi90ZBoCOuwQAvD_BwE">Autocarro Puerto Natales - Punta Arenas (8,00 €) </a></li>
+      </ul>
+    </section>
+  </main>
+
+    <footer>
+        <p>&copy; Mala de Sonhos • Ana Valente </p>
+
+    </footer>
+</body>
+</html>

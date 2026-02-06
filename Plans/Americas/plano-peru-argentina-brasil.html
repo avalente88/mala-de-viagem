@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+ <meta charset="UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+ <title>Plano de Viagem — Lua de Mel (Peru, Iguaçu e Brasil)</title>
+ <link rel="stylesheet" href="../../styles.css" />
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400..700&family=Great+Vibes&display=swap" rel="stylesheet">
+
+ <script>
+  // Aplica data-labels a todas as TD com base no texto dos TH
+  function applyDataLabels(table) {
+    if (!table) return;
+    const ths = Array.from(table.querySelectorAll('thead th'));
+    if (!ths.length) return;
+
+    // Extrai os textos dos TH (tratando espaços e quebras)
+    const headers = ths.map(th => (th.textContent || '').replace(/\s+/g, ' ').trim());
+
+    // Aplica em cada TD
+    table.querySelectorAll('tbody tr').forEach(tr => {
+      Array.from(tr.children).forEach((td, i) => {
+        const label = headers[i] || '';
+        if (label) td.setAttribute('data-label', label);
+      });
+    });
+  }
+
+  // Aplica aos seletores desejados
+  function makeStackedTables(...selectors) {
+    selectors.forEach(sel => {
+      document.querySelectorAll(sel).forEach(applyDataLabels);
+    });
+  }
+
+  // Corre quando o DOM estiver pronto
+  document.addEventListener('DOMContentLoaded', function() {
+    makeStackedTables('#voos table', '#hoteis table');
+
+    // OPCIONAL: se a tua página renderiza/atualiza tabelas via JS depois do load
+    // ativa este observer para voltar a aplicar labels quando o tbody mudar
+    const observer = new MutationObserver(() => {
+      makeStackedTables('#voos table', '#hoteis table');
+    });
+    document.querySelectorAll('#voos table tbody, #hoteis table tbody').forEach(tbody => {
+      observer.observe(tbody, { childList: true, subtree: true });
+    });
+  });
+</script>
+
+</head>
+<body>
+ <nav class="top-navbar">
+   <ul>
+     <li><a href="../../index.html">Home</a></li>
+     <li><a href="../../contacts.html">Contactos</a></li>
+   </ul>
+ </nav>
+ <header class="header-top" id="home">
+   
+   <div class="profile-container">
+      <img src="../../Images/Designer.png" alt="Mala de Sonhos by Ana Valente">
+    </div>
+ </header>
+ <main class="container">
+ <section id="resumo" class="card">
+  <h2 class="section-title">Resumo</h2>
+  <div class="grid-2">
+    <div>
+      <p><strong>Itinerário:</strong> Lisbon → … → Lisboa</p>
+    </div>
+    <div class="right">
+      <p class="total">TOTAL: 10 974€</p>
+    </div>
+  </div>
+ </section>
+ <section id="voos" class="card">
+  <h2 class="section-title">Voos</h2>
+  <table aria-label="Voos">
+   <thead>
+    <tr>
+     <th>Voos</th><th>Data</th><th>Origem</th><th>Destino</th><th>Partida</th><th>Chegada</th><th>Tempo</th><th>Escala</th><th class="right">Preço</th>
+    </tr>
+   </thead>
+   <tbody>
+    <tr><td>IB530</td><td>15-APR-25</td><td>Lisbon- LIS</td><td>Madrid- MAD</td><td>08:25</td><td>10:50</td><td>01:25h</td><td></td><td class="right"></td></tr><tr><td>IB125</td><td>15-APR-25</td><td>Madrid- MAD</td><td>Lima- LIM</td><td>13:00</td><td>18:00</td><td>12:00h</td><td></td><td class="right">875€</td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="right"></td></tr><tr><td>LA2037</td><td>18-APR-25</td><td>Lima - LIM</td><td>Cusco - CUZ</td><td>09:45</td><td>11:15</td><td>01:30h</td><td></td><td class="right"></td></tr><tr><td>LA2006</td><td>22-APR-25</td><td>Cusco - CUZ</td><td>Lima - LIM</td><td>06:55:00</td><td>08:30</td><td>01:30h</td><td></td><td class="right"></td></tr><tr><td>LA2345</td><td>22-APR-25</td><td>Lima - LIM</td><td>Buenos Aires - AEP</td><td>12:15</td><td>18:35</td><td>04:30h</td><td></td><td class="right"></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="right">7 124€</td></tr><tr><td>JA3146</td><td>24-APR-25</td><td>Buenos Aires - EZE</td><td>Cataratas del Iguazú - IGR</td><td>17:44</td><td>19:32</td><td>01:48h</td><td></td><td class="right"></td></tr><tr><td>LA3385</td><td>27-APR-25</td><td>Cataratas del Iguazú - IGU</td><td>São Paulo - CGH</td><td>08:25</td><td>10:05</td><td>1:40h</td><td></td><td class="right"></td></tr><tr><td>LA3628</td><td>27-APR-25</td><td>São Paulo - CGH</td><td>Salvador - SSA</td><td>12:50</td><td>15:15</td><td>02:25h</td><td></td><td class="right">348€</td></tr><tr><td>TP28</td><td>04-MAI-05</td><td>Salvador - SSA</td><td>Lisboa - LIS</td><td>23:35</td><td>11:50</td><td>08:15h</td><td></td><td class="right">1 397€</td></tr>
+   </tbody>
+  </table>
+ </section>
+ <section id="hoteis" class="card">
+  <h2 class="section-title">Hotéis</h2>
+  <table aria-label="Hotéis">
+   <thead>
+    <tr>
+     <th>Hotel</th><th>Local</th><th>Check‑in</th><th>Check‑out</th><th>Noites</th><th>Regime</th><th class="right">Preço</th>
+    </tr>
+   </thead>
+   <tbody>
+    <tr><td>JW Miraflores</td><td>Lima</td><td>15-APR-25</td><td>18-APR-25</td><td>3</td><td>pequeno-almoco</td><td class="right"></td></tr><tr><td>Hilton Inn Cusco</td><td>Cusco</td><td>18-APR-25</td><td>22-APR-25</td><td>4</td><td>pequeno-almoco</td><td class="right"></td></tr><tr><td>NH Centro Histórico</td><td>Buenos Aires</td><td>22-APR-25</td><td>24-APR-25</td><td>2</td><td>pequeno-almoco</td><td class="right"></td></tr><tr><td>Falls Iguazú Hotel &amp; Spa</td><td>Iguaçu (Argentina)</td><td>24-APR-25</td><td>26-APR-25</td><td>2</td><td>meia pensão</td><td class="right"></td></tr><tr><td>DoubleTree by Hilton Foz do Iguacu Brazil</td><td>Iguaçu (Brasil)</td><td>26-APR-25</td><td>27-APR-25</td><td>1</td><td>pequeno-almoco</td><td class="right"></td></tr><tr><td>Tivoli EcoResort Praia do Forte</td><td>Praia do Forte - Bahia</td><td>27-APR-25</td><td>04-MAI-05</td><td>7</td><td>meia pensão</td><td class="right"></td></tr>
+   </tbody>
+  </table>
+  <p class="muted">👉 Os preços indicados podem ser por quarto/noite ou por pessoa conforme tarifa.</p>
+ </section>
+ <section id="plano" class="card">
+  <h2 class="section-title">Plano diário</h2>
+  <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; margin-bottom:10px;">
+    <p class="muted" style="margin:0;">
+      <span class="tag tag-voo">voo</span>
+      <span class="tag tag-comboio">comboio</span>
+      <span class="tag tag-estrada">estrada</span>
+    </p>
+    <div style="display:flex; gap:8px;">
+      <button type="button" class="btn-outline" id="expandAll">Expandir todos</button>
+      <button type="button" class="btn-outline" id="collapseAll">Ocultar todos</button>
+    </div>
+  </div>
+  <div id="dailyList"></div>
+ </section>
+ </main>
+ <footer>
+  <p>© <span id="year"></span> TravelNow</p>
+ </footer>
+ <style>
+ .day-line{display:flex; align-items:center; justify-content:space-between; border-left:4px solid #5dcbed; padding:10px 12px; margin:10px 0; background:rgba(255,255,255,.8); border-radius:8px;}
+ .day-line .left{ display:flex; gap:10px; align-items:center; flex-wrap:wrap; }
+ .day-line .date{ font-weight:700; color:#1F4E78; white-space:nowrap; }
+ .day-line .city{ color:#333; }
+ .btn-tag{ display:inline-block; border:none; cursor:pointer; padding:4px 10px; border-radius:12px; font-size:.85rem; line-height:1.2; background:#f7b1c3; color:#fff; }
+ .btn-tag:hover{ filter:brightness(.95); }
+ .btn-tag:focus{ outline:2px solid #1F4E78; outline-offset:2px; }
+ .btn-outline{ background:transparent; color:#1F4E78; border:1px solid #1F4E78; padding:6px 10px; border-radius:8px; cursor:pointer; font-size:.9rem; }
+ .btn-outline:hover{ background:#1F4E78; color:#fff; }
+ .day-details{ padding:10px 12px 6px 12px; border-left:4px solid #c293d8; background:rgba(255,255,255,.9); border-radius:0 0 8px 8px; margin-top:-8px; display:none; }
+ .day-details.open{ display:block; }
+ .group{ margin:8px 0; }
+ .group h4{ margin:6px 0 4px 0; color:#1F4E78; font-size:1rem; }
+ .bullet{ margin:3px 0; }
+ </style>
+ <script>
+  const daysData = [
+    { date: "15-APR-25", city: "", transport: [], details: [{ label: null, items: ["Ida para Lima e chegada por volta das 18:00."] }] },
+    { date: "16-APR-25", city: "", transport: [], details: [{ label: null, items: ["Lima"] }] },
+    { date: "17-APR-25", city: "", transport: [], details: [{ label: null, items: ["Lima"] }] },
+    { date: "18-APR-25", city: "", transport: [], details: [{ label: null, items: ["Ida para Cusco"] }] },
+    { date: "19-APR-25", city: "", transport: [], details: [{ label: null, items: ["Cusco - Vale Sagrado"] }] },
+    { date: "20-APR-25", city: "", transport: [], details: [{ label: null, items: ["Belmond Train para Matchu Pichu e regresso a Cusco em comboio normal"] }] },
+    { date: "21-APR-25", city: "", transport: [], details: [{ label: null, items: ["Cusco - Rainbow montain"] }] },
+    { date: "22-APR-25", city: "", transport: [], details: [{ label: null, items: ["Cusco - Buenos Aires"] }] },
+    { date: "23-APR-25", city: "", transport: [], details: [{ label: null, items: ["Buenos Aires"] }] },
+    { date: "24-APR-25", city: "", transport: [], details: [{ label: null, items: ["Buenos Aires - Iguaçu"] }] },
+    { date: "25-APR-25", city: "", transport: [], details: [{ label: null, items: ["Iguaçu argentino"] }] },
+    { date: "26-APR-25", city: "", transport: [], details: [{ label: null, items: ["Iguaçu Brasil"] }] },
+    { date: "27-APR-25", city: "", transport: [], details: [{ label: null, items: ["Iguaçu - praia no Brasil"] }] },
+    { date: "28-APR-25", city: "", transport: [], details: [{ label: null, items: ["praia no Brasil"] }] },
+    { date: "29-APR-25", city: "", transport: [], details: [{ label: null, items: ["praia no Brasil"] }] },
+    { date: "30-APR-25", city: "", transport: [], details: [{ label: null, items: ["praia no Brasil"] }] },
+    { date: "01-MAI-05", city: "", transport: [], details: [{ label: null, items: ["praia no Brasil"] }] },
+    { date: "02-MAI-05", city: "", transport: [], details: [{ label: null, items: ["praia no Brasil"] }] },
+    { date: "03-MAI-05", city: "", transport: [], details: [{ label: null, items: ["praia no Brasil"] }] },
+    { date: "04-MAI-05", city: "", transport: [], details: [{ label: null, items: ["regresso a Lisboa"] }] }
+  ];
+
+  const root = document.getElementById('dailyList');
+  daysData.forEach((d, idx) => {
+    const line = document.createElement('div'); line.className = 'day-line'; line.setAttribute('data-index', idx);
+    const left = document.createElement('div'); left.className = 'left';
+    const date = document.createElement('div'); date.className = 'date'; date.textContent = d.date;
+    const city = document.createElement('div'); city.className = 'city'; city.textContent = d.city ? ('— ' + d.city) : '';
+    left.appendChild(date); left.appendChild(city);
+    const btn = document.createElement('button'); btn.className='btn-tag'; btn.type='button'; btn.setAttribute('aria-expanded','false'); btn.setAttribute('aria-controls',`details-${idx}`); btn.textContent='Ver detalhes';
+    line.appendChild(left); line.appendChild(btn);
+    const details = document.createElement('div'); details.className='day-details'; details.id=`details-${idx}`;
+    (d.details||[]).forEach(group=>{ const wrap = document.createElement('div'); wrap.className='group'; if(group.label){ const h4=document.createElement('h4'); h4.textContent=group.label; wrap.appendChild(h4);} (group.items||[]).forEach(it=>{ const p=document.createElement('div'); p.className='bullet'; p.textContent = '• ' + it; wrap.appendChild(p); }); details.appendChild(wrap); });
+    btn.addEventListener('click', ()=>{ const open = details.classList.contains('open'); details.classList.toggle('open'); btn.setAttribute('aria-expanded', String(!open)); btn.textContent = open ? 'Ver detalhes' : 'Ocultar'; });
+    root.appendChild(line); root.appendChild(details);
+  });
+  document.getElementById('expandAll').addEventListener('click', ()=>{ document.querySelectorAll('.day-details').forEach((el,i)=>{ el.classList.add('open'); const btn = document.querySelector(`.day-line[data-index="${i}"] .btn-tag`); if(btn){ btn.setAttribute('aria-expanded','true'); btn.textContent='Ocultar'; } }); });
+  document.getElementById('collapseAll').addEventListener('click', ()=>{ document.querySelectorAll('.day-details').forEach((el,i)=>{ el.classList.remove('open'); const btn = document.querySelector(`.day-line[data-index="${i}"] .btn-tag`); if(btn){ btn.setAttribute('aria-expanded','false'); btn.textContent='Ver detalhes'; } }); });
+  document.getElementById('year').textContent = new Date().getFullYear();
+ </script>
+
+</body>
+</html>

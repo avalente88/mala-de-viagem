@@ -3,63 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TravelNow – Travel Agency</title>
+    <title>Mala de Sonhos</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400..700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f0f4f8;
-            color: #1e293b;
-        }
-
-        /* Styling for the SVG map */
-        #world-map-svg {
-            cursor: pointer;
-            width: 100%;
-            height: auto;
-            max-height: 90vh;
-        }
-
-        /* Default country style */
-        #world-map-svg path {
-            fill: #cbd5e1;
-            stroke: #f0f4f8;
-            stroke-width: 0.5;
-            transition: fill 0.2s ease-in-out;
-        }
-
-        /* Style for a country when hovered over */
-        #world-map-svg path:hover {
-            fill: #94a3b8;
-        }
-
-        /* Style for the currently selected country */
-        #world-map-svg path.active {
-            fill: #f63b6d;
-        }
-        /* Container for the map to enable scaling */
-        #map-container > svg {
-            width: 100%;
-            height: 100%;
-        }
-        /* Simple pulse animation for the loading indicator */
-        @keyframes pulse {
-            0%, 100% {
-                opacity: 1;
-            }
-            50% {
-                opacity: 0.5;
-            }
-        }
-        .animate-pulse {
-            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-        }
-    </style>
 
 </head>
 <body >
@@ -74,17 +24,31 @@
     <!-- Header / Home Section -->
     <header class="header-top" id="home">
         <div class="profile-container">
-            <img src="Images/logo.png" alt="TravelNow – Dream Destinations">
+            <img src="Images/Designer.png" alt="Mala de Sonhos by Ana Valente">
         </div>
 
     </header>
 
 <section id="map" style="max-width: 100%; margin-left: 10%; margin-right: 10%; margin-top: 50px ">
-    <div class="w-full max-w-7xl bg-white rounded-2xl shadow-lg flex flex-col lg:flex-row overflow-hidden">
+    <div class="w-full bg-white rounded-2xl shadow-lg flex flex-col lg:flex-row overflow-hidden">
         <div class="w-full lg:w-2/3 p-4 sm:p-6 md:p-8 flex flex-col items-center justify-center">
 
 
             <div id="map-container" class="w-full h-full">
+
+                        <div class="relative w-full mb-4">
+                        <input 
+                                id="country-search"
+                                type="text"
+                                placeholder="Procura um país..."
+                                class="w-full p-3 border rounded-lg shadow-sm"
+                                autocomplete="off" />
+
+                        <div 
+                                id="search-suggestions"
+                                class="absolute z-20 bg-white border rounded-lg mt-1 w-full shadow-lg hidden"></div>
+                        </div>
+
                 <svg version="1.1" id="world-map-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1000 750" xml:space="preserve">
                     <path
             id="AD"
@@ -1230,6 +1194,7 @@
     </div>
     <script src="script.js">
     </script>
+   
 
 </section>
 
@@ -1239,7 +1204,7 @@
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2026 TravelNow </p>
+        <p>&copy; Mala de Sonhos • Ana Valente </p>
 
     </footer>
 </body>
