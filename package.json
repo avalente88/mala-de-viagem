@@ -1,10 +1,11 @@
 {
   "name": "mala-de-viagem",
   "version": "1.0.0",
-  "description": "Static site for travel plans",
+  "description": "Site for travel plans",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "dev": "node --watch server.js"
   },
   "engines": {
     "node": ">=20"

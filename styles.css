@@ -499,6 +499,8 @@ footer a:hover {
   font-size: 0.85em;
 }
 
+
+
 /* Modo “cards” ativo só em ecrãs pequenos */
 @media (max-width: 640px) {
   /* Esconde cabeçalho */

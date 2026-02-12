@@ -1,0 +1,19 @@
+/* MDS lightweight datepicker */
+.mds-picker{ position:absolute; z-index:9999; background:#fff; border:1px solid #e2e8f0; border-radius:12px; padding:8px; box-shadow:0 10px 25px rgba(0,0,0,.12); width: 280px; }
+.mds-picker.mds-hidden{ display:none; }
+.mds-picker header{ display:flex; align-items:center; justify-content:space-between; padding:6px 6px 8px; }
+.mds-picker header .mds-nav{ display:flex; gap:6px; }
+.mds-picker header button{ border:none; background:#f1f5f9; color:#1F4E78; border-radius:8px; padding:6px 8px; cursor:pointer; }
+.mds-picker header button:hover{ background:#e2e8f0; }
+.mds-picker .mds-title{ font-weight:700; color:#1F4E78; }
+.mds-grid{ display:grid; grid-template-columns: repeat(7, 1fr); gap:4px; padding:4px; }
+.mds-cell{ text-align:center; padding:8px 0; border-radius:8px; cursor:pointer; }
+.mds-cell.mds-dow{ font-size:.8rem; color:#64748b; cursor:default; }
+.mds-cell.mds-day:hover{ background:#eaf4fb; }
+.mds-cell.mds-today{ outline:2px solid #1F4E78; }
+.mds-cell.mds-selected{ background:#1F4E78; color:#fff; }
+.mds-cell.mds-out{ color:#94a3b8; }
+.mds-footer{ display:flex; justify-content:flex-end; padding:6px; }
+.mds-footer button{ border:none; background:#1F4E78; color:#fff; border-radius:8px; padding:6px 10px; cursor:pointer; }
+.mds-footer button:hover{ filter:brightness(.95); }
+.mds-input{ appearance:none; }

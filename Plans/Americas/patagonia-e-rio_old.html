@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Plano de Viagem — Patagónia 2026</title>
   <link rel="stylesheet" href="../../styles.css" />
-  <link rel="stylesheet" href="../../datepicker.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400..700&family=Great+Vibes&display=swap" rel="stylesheet">
@@ -132,28 +131,7 @@
 </section>
 
     <!-- Voos -->
-    
-  <!-- Pesquisa dinâmica de voos -->
-  <section id="flight-search" class="card" aria-label="Pesquisar voos">
-    <h2 class="section-title">Pesquisar voos por data</h2>
-    <form id="flightSearchForm" class="grid-2" onsubmit="return false;">
-      <div>
-        <label for="departureDate"><strong>Data de partida</strong></label><br/>
-        <input type="text" id="departureDate" name="departureDate" required class="mds-date-input" placeholder="aaaa-mm-dd" autocomplete="off"/>
-      </div>
-      <div style="align-self:end;">
-        <button id="btnSearchFlights" class="btn-tag" type="button">Procurar voos</button>
-      </div>
-      <!-- Origem e destino já no ecrã: pode ajustar estes valores no HTML -->
-      <input type="hidden" id="origin" value="LIS" />
-      <input type="hidden" id="destination" value="SCL" />
-    </form>
-    <p id="flightSearchHint" class="muted" style="margin-top:8px;">
-      Escolha a data e clique em <em>Procurar voos</em>. Os resultados irão atualizar a tabela abaixo.
-    </p>
-  </section>
-
- <section id="voos" class="card">
+    <section id="voos" class="card">
       <h2 class="section-title">Voos</h2>
       <table aria-label="Voos">
         <thead>
@@ -800,111 +778,5 @@
         <p>&copy; Mala de Sonhos • Ana Valente </p>
 
     </footer>
-
-<script>
-  (function(){
-    const btn = document.getElementById('btnSearchFlights');
-    const dateInput = document.getElementById('departureDate');
-    const originEl = document.getElementById('origin');
-    const destEl = document.getElementById('destination');
-    const tbody = document.querySelector('#voos table tbody');
-
-    async function runSearch(){
-      if(!dateInput.value) { dateInput.focus(); return; }
-      const origin = originEl?.value || 'LIS';
-      const destination = destEl?.value || 'SCL';
-      const isoDate = dateInput.value; // yyyy-mm-dd
-
-      // Loading state
-      if(tbody){
-        tbody.innerHTML = '<tr><td colspan="9">A procurar voos…</td></tr>';
-      }
-
-      try{
-        const offers = await window.buscarVoosFront(origin, destination, isoDate);
-        if(!offers || !offers.length){
-          tbody.innerHTML = '<tr><td colspan="9">Sem resultados para esta data.</td></tr>';
-          return;
-        }
-        // Map first up to 10 results onto the table schema
-        const rows = offers.slice(0,10).map(o => {
-          const itin0 = o.itineraries?.[0];
-          const seg0 = itin0?.segments?.[0];
-          const lastSeg = itin0?.segments?.[itin0.segments.length-1];
-          const dep = seg0?.departure?.at?.substring(11,16) || '';
-          const arr = lastSeg?.arrival?.at?.substring(11,16) || '';
-          const stops = (itin0?.segments?.length||1) - 1;
-          const duration = itin0?.duration?.replace('PT','').toLowerCase() || '';
-          const code = o.validatingAirlineCodes?.[0] || (seg0?.carrierCode||'') + (seg0?.number||'');
-          const price = o.price?.total || '';
-          const datePretty = isoDate.split('-').reverse().join('-');
-          return `
-            <tr>
-              <td>${code}</td>
-              <td>${datePretty}</td>
-              <td>${origin}</td>
-              <td>${destination}</td>
-              <td>${dep}</td>
-              <td>${arr}</td>
-              <td>${duration}</td>
-              <td>${stops === 0 ? '' : stops.toString()}</td>
-              <td class="right">${price ? price + ' €' : ''}</td>
-            </tr>`; 
-        }).join('');
-        tbody.innerHTML = rows;
-      }catch(err){
-        console.error(err);
-        tbody.innerHTML = '<tr><td colspan="9">Ocorreu um erro ao procurar voos.</td></tr>';
-      }
-    }
-
-    if(btn){ btn.addEventListener('click', runSearch); }
-    if(dateInput){ dateInput.addEventListener('change', ()=>{ /* optional auto-search */ }); }
-  })();
-</script>
-<script src="../../datepicker.js"></script>
-<script>
-  document.addEventListener('DOMContentLoaded', function(){
-    const input = document.getElementById('departureDate');
-    if (!input) return;
-    const picker = new MDSDatepicker(input, {
-      i18n: {
-        months: ['janeiro','fevereiro','março','abril','maio','junho','julho','agosto','setembro','outubro','novembro','dezembro'],
-        weekdaysShort: ['D','S','T','Q','Q','S','S']
-      },
-      firstDay: 1,
-      format: 'yyyy-mm-dd',
-      theme: 'mds',
-      min: null
-    });
-
-    // Conversão para ISO + chamada ao backend quando clica em Procurar voos
-    const btn = document.getElementById('btnSearchFlights');
-    const tbody = document.querySelector('#voos table tbody');
-    const originEl = document.getElementById('origin');
-    const destEl = document.getElementById('destination');
-
-    async function runSearch(){
-      const displayValue = input.value.trim();
-      if(!displayValue){ input.focus(); return; }
-      const m = displayValue.match(/^(\\d{2})-(\\d{2})-(\\d{4})$/);
-      if(!m){ input.focus(); return; }
-      const iso = `${m[3]}-${m[2]}-${m[1]}`;
-      const origin = originEl?.value || 'LIS';
-      const destination = destEl?.value || 'SCL';
-      if(tbody){ tbody.innerHTML = '<tr><td colspan=\"9\">A procurar voos…</td></tr>'; }
-      try{
-        const offers = await window.buscarVoosFront(origin, destination, iso);
-        /* mapeamento p/ tabela (idem à versão anterior) */
-      }catch(err){
-        console.error(err);
-      }
-    }
-    if(btn){ btn.addEventListener('click', runSearch); }
-  });
-</script>
-
-<script src="../../search-flights.js"></script>
-
 </body>
 </html>
