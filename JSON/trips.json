@@ -1,0 +1,368 @@
+{
+  "patagonia1": {
+    "name": "Patagónia + Buenos Aires + Rio",
+    "days": [
+      {
+        "date": "03 novembro",
+        "city": "Viagem para o Chile",
+        "transport": [
+          {
+            "type": "avião",
+            "text": ""
+          }
+        ],
+        "details": [
+          {
+            "label": null,
+            "items": [
+              "Viagem para Santiago, via São Paulo"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "04 novembro",
+        "city": "Visitar Santiago",
+        "transport": [],
+        "details": [
+          {
+            "label": null,
+            "items": [
+              "Começar pela Plaza de Armas (Catedral Metropolitana e edifícios históricos)",
+              "Visitar o Palacio de La Moneda",
+              "Almoço no Mercado Central ou no Bairro Lastarria",
+              "Tarde no Bairro Lastarria e no Museu Nacional de Belas Artes",
+              "Fim do dia no Cerro Santa Lucía para vista da cidade"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "05 novembro",
+        "city": "Visitar Santiago",
+        "transport": [],
+        "details": [
+          {
+            "label": null,
+            "items": [
+              "Visita ao Cerro San Cristóbal (vista da cidade e da Cordilheira dos Andes)",
+              "Após almoço: tour a uma vinícola (Concha y Toro, Santa Rita ou Undurraga)",
+              "Jantar em Providencia ou Vitacura"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "06 novembro",
+        "city": "Viagem para Puerto Natales",
+        "transport": [
+          {
+            "type": "avião",
+            "text": ""
+          }
+        ],
+        "details": [
+          {
+            "label": null,
+            "items": [
+              "Passeio ao entardecer pela orla de Puerto Natales (fiordes e Monumento à Mão)"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "07 novembro",
+        "city": "Torres del Paine · Cavernas do Milodón",
+        "transport": [
+          {
+            "type": "tour",
+            "text": ""
+          }
+        ],
+        "details": [
+          {
+            "label": null,
+            "items": [
+              "Saída de Puerto Natales para dia inteiro no Parque Nacional Torres del Paine",
+              "Visita às Cavernas do Milodón",
+              "Paradas: El Castillo, Laguna Amarga, lagos Nordenskjöld e Pehoé",
+              "Caminhada até o Salto Grande com vista do Mirador Cuernos",
+              "Região do Lago Grey: observar geleira e caminhada na floresta de lengas",
+              "Regresso a Puerto Natales no final do dia"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "08 novembro",
+        "city": "Balmaceda & Serrano (navegação)",
+        "transport": [
+          {
+            "type": "tour",
+            "text": ""
+          }
+        ],
+        "details": [
+          {
+            "label": null,
+            "items": [
+              "Navegação pelo Fiorde Última Esperanza (paisagens, fauna, montanhas e cascatas)",
+              "Observação da Geleira Balmaceda",
+              "Caminhada ao mirante da Geleira Serrano (PN Bernardo O’Higgins)",
+              "Parada em estância para uísque com gelo milenar",
+              "Regresso a Puerto Natales ao fim da tarde"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "09 novembro",
+        "city": "Ida para Punta Arenas",
+        "transport": [
+          {
+            "type": "autocarro",
+            "text": ""
+          }
+        ],
+        "details": [
+          {
+            "label": null,
+            "items": [
+              "Chegada e passeio pelo centro histórico",
+              "Plaza Muñoz Gamero, Mirador Cerro de la Cruz",
+              "Orla do Estreito de Magalhães"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "10 novembro",
+        "city": "Punta Arenas · Isla Magdalena",
+        "transport": [],
+        "details": [
+          {
+            "label": null,
+            "items": [
+              "Passeio à Isla Magdalena para ver pinguins"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "11 novembro",
+        "city": "Punta Arenas → Puerto Williams",
+        "transport": [
+          {
+            "type": "avião",
+            "text": ""
+          }
+        ],
+        "details": [
+          {
+            "label": null,
+            "items": [
+              "Trekking curto no Parque Dientes de Navarino ou passeio pelo porto"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "12 novembro",
+        "city": "Puerto Williams → Ushuaia",
+        "transport": [
+          {
+            "type": "ferry",
+            "text": ""
+          }
+        ],
+        "details": [
+          {
+            "label": null,
+            "items": [
+              "Travessia de barco (ferry) até Ushuaia — passeio e transporte"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "13 novembro",
+        "city": "Ushuaia",
+        "transport": [],
+        "details": [
+          {
+            "label": null,
+            "items": [
+              "Visita ao Parque Nacional Tierra del Fuego"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "14 novembro",
+        "city": "Ushuaia → El Calafate",
+        "transport": [
+          {
+            "type": "avião",
+            "text": ""
+          }
+        ],
+        "details": [
+          {
+            "label": null,
+            "items": [
+              "Explorar o centro de El Calafate (artesanato e cafés)"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "15 novembro",
+        "city": "El Calafate · Perito Moreno",
+        "transport": [
+          {
+            "type": "tour",
+            "text": ""
+          }
+        ],
+        "details": [
+          {
+            "label": null,
+            "items": [
+              "Saída cedo rumo ao PN Los Glaciares para conhecer o Glaciar Perito Moreno"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "16 novembro",
+        "city": "El Calafate → Buenos Aires",
+        "transport": [
+          {
+            "type": "avião",
+            "text": ""
+          }
+        ],
+        "details": [
+          {
+            "label": null,
+            "items": [
+              "De manhã: Glaciarium ou passeio pelo Lago Argentino",
+              "Preparar tudo para o voo para Buenos Aires"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "17 novembro",
+        "city": "Buenos Aires",
+        "transport": [],
+        "details": [
+          {
+            "label": null,
+            "items": [
+              "City tour Hop On Hop Off",
+              "Visitar Palermo e La Boca",
+              "Café no centro histórico e passagem pelo marco da Mafalda"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "18 novembro",
+        "city": "Ida para o Rio de Janeiro",
+        "transport": [
+          {
+            "type": "avião",
+            "text": ""
+          }
+        ],
+        "details": [
+          {
+            "label": null,
+            "items": [
+              "Voo para o Rio de Janeiro para dias de descanso"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "19 novembro",
+        "city": "Rio de Janeiro",
+        "transport": [],
+        "details": [
+          {
+            "label": null,
+            "items": [
+              "Praça XV e Paço Imperial",
+              "Biblioteca do Real Gabinete Português de Leitura",
+              "Pausa na Confeitaria Colombo",
+              "Jantar animado na Lapa"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "20 novembro",
+        "city": "Rio de Janeiro",
+        "transport": [],
+        "details": [
+          {
+            "label": null,
+            "items": [
+              "Subida ao Cristo Redentor",
+              "Bairro de Santa Teresa (ateliês, ruas de paralelepípedos, Parque das Ruínas)"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "21 novembro",
+        "city": "Rio de Janeiro",
+        "transport": [],
+        "details": [
+          {
+            "label": null,
+            "items": [
+              "Manhã em Copacabana e Ipanema (calçadão e praia)",
+              "Tarde: bondinho ao Pão de Açúcar (vista da Baía de Guanabara)",
+              "Passeio pela Urca e jantar à beira‑mar"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "22 novembro",
+        "city": "Rio de Janeiro",
+        "transport": [],
+        "details": [
+          {
+            "label": null,
+            "items": [
+              "Manhã no Jardim Botânico",
+              "Almoço próximo à Lagoa Rodrigo de Freitas",
+              "Fim do dia no Leblon"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "23 novembro",
+        "city": "Regresso a Lisboa",
+        "transport": [
+          {
+            "type": "avião",
+            "text": ""
+          }
+        ],
+        "details": [
+          {
+            "label": null,
+            "items": [
+              "Relaxar na piscina ou na praia antes do aeroporto"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

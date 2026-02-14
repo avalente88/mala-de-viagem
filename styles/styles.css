@@ -42,7 +42,7 @@ header p {
   flex-direction: column; 
   align-items: center;
   padding: 50px 50px; 
-  background: url('Images/background.jpg') no-repeat;
+  background: url('../Images/background.jpg') no-repeat;
   background-size: cover; 
   background-position: left center;
   color: white;
@@ -559,3 +559,45 @@ footer a:hover {
     border-top: 1px dashed #eef1f4;
   }
 }
+
+/* Linhas “simples” do dia */
+    .day-line{
+    display:flex; align-items:center; justify-content:space-between;
+    border-left:4px solid #5dcbed; padding:10px 12px; margin:10px 0;
+    background:rgba(255,255,255,.8); border-radius:8px;
+    }
+    .day-line .left{ display:flex; gap:10px; align-items:center; flex-wrap:wrap; }
+    .day-line .date{ font-weight:700; color:#1F4E78; white-space:nowrap; }
+    .day-line .city{ color:#333; }
+    /* Tags de transporte (cores) */
+    .tag{ display:inline-block; padding:4px 8px; border-radius:12px; font-size:.85rem; line-height:1.2; color:#fff; }
+    .tag-voo{ background:#5dcbed; }        /* avião */
+    .tag-comboio{ background:#7cc576; }    /* comboio */
+    .tag-estrada{ background:#c293d8; }    /* estrada genérica */
+    .tag-tour{ background:#f0a36b; }       /* tour/expedição */
+    .tag-autocarro{ background:#8aa3ff; }  /* autocarro */
+    .tag-ferry{ background:#50bfa0; }      /* ferry/barco */
+    /* Botão estilo .tag usando a cor da antiga “táxi” (#f7b1c3) */
+    .btn-tag{
+    display:inline-block; border:none; cursor:pointer;
+    padding:4px 10px; border-radius:12px; font-size:.85rem; line-height:1.2;
+    background:#f7b1c3; color:#fff;
+    }
+    .btn-tag:hover{ filter:brightness(.95); }
+    .btn-tag:focus{ outline:2px solid #1F4E78; outline-offset:2px; }
+    /* Botões utilitários (expandir/ocultar) no topo */
+    .btn-outline{
+    background:transparent; color:#1F4E78; border:1px solid #1F4E78;
+    padding:6px 10px; border-radius:8px; cursor:pointer; font-size:.9rem;
+    }
+    .btn-outline:hover{ background:#1F4E78; color:#fff; }
+    /* Contentor de detalhes (expansion) */
+    .day-details{
+    padding:10px 12px 6px 12px; border-left:4px solid #c293d8;
+    background:rgba(255,255,255,.9); border-radius:0 0 8px 8px;
+    margin-top:-8px; display:none;
+    }
+    .day-details.open{ display:block; }
+    .group{ margin:8px 0; }
+    .group h4{ margin:6px 0 4px 0; color:#1F4E78; font-size:1rem; }
+    .bullet{ margin:3px 0; }

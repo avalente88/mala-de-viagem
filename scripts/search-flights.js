@@ -1,13 +1,3 @@
-/**
- * search-flights.js
- *
- * Mantém TODAS as funções auxiliares (parseDuration, getTotalDuration, getTotalStops, chooseBestFlight)
- * e oferece uma API segura para o front‑end: buscarVoosFront(origin, destination, departureDate).
- *
- * ➜ No browser, NUNCA guarda segredos. Se existir window.FLIGHTS_API_URL, chama o seu backend
- *    (ex.: /api/flights). Caso contrário, devolve dados mock para testes locais.
- * ➜ Em Node (para testes/scripts), pode exportar as helpers via module.exports.
- */
 (function (root, factory) {
   if (typeof module === 'object' && module.exports) {
     module.exports = factory();
@@ -18,10 +8,10 @@
   'use strict';
 
   // ----------------------
-  // Funções auxiliares
+  // Helpers
   // ----------------------
   function parseDuration(isoDuration) {
-    // Ex.: "PT15H30M"
+    // e.g., "PT15H30M"
     if (!isoDuration || typeof isoDuration !== 'string') return 0;
     var h = (isoDuration.match(/(\d+)H/) || [0, 0])[1];
     var m = (isoDuration.match(/(\d+)M/) || [0, 0])[1];
@@ -41,6 +31,7 @@
     }, 0);
   }
 
+
   function chooseBestFlight(flightOffers) {
     if (!Array.isArray(flightOffers) || flightOffers.length === 0) return null;
     var enriched = flightOffers.map(function (offer) {
@@ -49,10 +40,10 @@
       var stops = getTotalStops(offer && offer.itineraries);
       return { offer: offer, price: price, duration: duration, stops: stops };
     });
-    // baseline: mais barato
+    // baseline: cheapest
     var cheapest = enriched.reduce(function (a, b) { return (a.price < b.price ? a : b); });
-    var maxAllowedPrice = cheapest.price + 200; // regra de negócio simples
-    // elegíveis: até +200€ e com igual/menos escalas que o mais barato
+    var maxAllowedPrice = cheapest.price + 200; // simple business rule
+    // eligible: <= +200€ and <= stops of cheapest
     var eligible = enriched.filter(function (f) {
       return f.price <= maxAllowedPrice && f.stops <= cheapest.stops;
     });
@@ -64,12 +55,12 @@
   }
 
   // ----------------------
-  // Front-end: busca segura
+  // Front-end fetcher (no SDK here)
   // ----------------------
   async function buscarVoosFront(origin, destination, departureDate, options) {
     var opts = Object.assign({ adults: 1, max: 10 }, options);
-    // Se existir API de backend, chamar
-    if (typeof window !== 'undefined') {
+
+    if (typeof window !== 'undefined' && window.FLIGHTS_API_URL) {
       var q = new URLSearchParams({
         origin: origin,
         destination: destination,
@@ -77,27 +68,15 @@
         adults: String(opts.adults || 1),
         max: String(opts.max || 10)
       });
-      
-
-    const response = await amadeus.shopping.flightOffersSearch.get({
-          originLocationCode: origin,
-          destinationLocationCode: destination,
-          departureDate: departureDate,
-          adults: 1,
-          max: 10
-        });
-
-    const voos = response.result.data;
-
-    const melhorVoo = chooseBestFlight(voos).json();
-
-
-
-
-      return melhorVoo && (melhorVoo.data || melhorVoo.offers) || [];
+      var url = window.FLIGHTS_API_URL + '?' + q.toString();
+      var res = await fetch(url);
+      if (!res.ok) throw new Error('API error: ' + res.status);
+      var data = await res.json();
+      var bestOption = chooseBestFlight(data.data);
+      return bestOption || [];
     }
 
-    // Fallback: mock para desenvolvimento sem backend
+    // Fallback mock (dev only)
     var pad = function (x) { return String(x).padStart(2, '0'); };
     var mock = function () {
       var depH = 9 + Math.floor(Math.random() * 8);
@@ -118,29 +97,86 @@
     return Array.from({ length: Math.min(5, opts.max || 5) }, mock);
   }
 
-  // ----------------------
-  // Node helper (opcional): buscar e escolher melhor voo
-  // ----------------------
-  async function escolherMelhorFront(origin, destination, departureDate, options) {
-    var offers = await buscarVoosFront(origin, destination, departureDate, options);
-    return chooseBestFlight(offers);
-  }
-
-  // API pública
+  // Public API
   return {
-    // helpers
     parseDuration: parseDuration,
     getTotalDuration: getTotalDuration,
     getTotalStops: getTotalStops,
     chooseBestFlight: chooseBestFlight,
-    // front-end
-    buscarVoosFront: buscarVoosFront,
-    escolherMelhorFront: escolherMelhorFront
+    buscarVoosFront: buscarVoosFront
   };
 });
 
-// No browser, expõe funções em window para uso direto com o HTML existente
+// Expose globals for the page
 if (typeof window !== 'undefined' && window.FlightSearch) {
   window.buscarVoosFront = window.FlightSearch.buscarVoosFront;
   window.chooseBestFlight = window.FlightSearch.chooseBestFlight;
+}
+
+let airportMap = {};
+
+async function loadAirports() {
+  const response = await fetch("../../JSON/airports.json");
+  const airports = await response.json();
+
+  airportMap = airports.reduce((acc, a) => {
+    acc[a.code] = a;
+    return acc;
+  }, {});
+}
+
+function getAirportLabel(code) {
+  const key = code.toUpperCase();
+  const airport = airportMap[key];
+
+  if (!airport) return `${key} - Unknown`;
+
+  return `${airport.code} - ${airport.city}`;
+}
+
+// Load data as soon as the page opens
+loadAirports();
+
+  function getStops(itinerary) {
+  const segments = itinerary.segments;
+  const stops = [];
+
+  for (let i = 0; i < segments.length - 1; i++) {
+    const current = segments[i];
+    const next = segments[i + 1];
+
+    const stopLocation = getAirportLabel(current.arrival.iataCode);
+
+    const arrivalTime = new Date(current.arrival.at);
+    const nextDepartureTime = new Date(next.departure.at);
+
+    const diffMs = nextDepartureTime - arrivalTime;
+
+    // Convert to hours and minutes
+    const totalMinutes = Math.floor(diffMs / (1000 * 60));
+    const hours = Math.floor(totalMinutes / 60);
+    const minutes = totalMinutes % 60;
+
+    stops.push(`${stopLocation} - ${hours}h${minutes}m`);
+  }
+    return stops.join("\n");;
+}
+
+async function getAllOffers(isoDate, flights) {
+  const baseDate = new Date(isoDate);
+
+  const offers = [];
+
+  for (const [from, to, offset] of flights) {
+    const date = new Date(baseDate);
+    date.setDate(date.getDate() + offset);
+
+    const formattedDate = date.toISOString().split("T")[0];
+
+    const offer = await window.buscarVoosFront(from, to, formattedDate);
+
+    offers.push(offer);
+  }
+
+  return offers;
 }

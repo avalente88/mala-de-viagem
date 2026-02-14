@@ -21,6 +21,9 @@ function makeStackedTables(...selectors) {
   });
 }
 
+
+
+
 document.addEventListener('DOMContentLoaded', () => {
   const map = document.getElementById('world-map-svg');
   const placeholder = document.getElementById('placeholder');

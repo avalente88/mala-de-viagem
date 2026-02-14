@@ -13,7 +13,7 @@
       this.opts = Object.assign({
         format: 'dd-mm-yyyy',
         firstDay: 1,
-        i18n: { months: 'January February March April May June July August September October November December'.split(' '), weekdaysShort: 'S M T W T F S'.split(' ') },
+        i18n: { months: 'Janeiro Fevereiro Março Abril Maio Junho Julho Agosto Setembro Outubro Novembro Dezembro'.split(' '), weekdaysShort: 'S M T W T F S'.split(' ') },
         theme: 'mds',
         min: null,
         max: null
