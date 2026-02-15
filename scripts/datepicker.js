@@ -1,3 +1,5 @@
+
+
 (function(){
   function formatDate(date, fmt){
     const dd = String(date.getDate()).padStart(2,'0');
@@ -94,15 +96,44 @@
       const cells = [];
       for(let i=0;i<7;i++) cells.push(`<div class="mds-cell mds-dow">${weekdaysShort[(this.opts.firstDay+i)%7]}</div>`);
       for(let i=0;i<shift;i++) cells.push(`<div class="mds-cell mds-day mds-out"></div>`);
+      
       for(let d=1; d<=daysInMonth; d++){
         const dt = new Date(y, m, d);
         const classes = ['mds-cell','mds-day'];
+
+        // Hoje
         if(sameDate(dt, new Date())) classes.push('mds-today');
+
+        // Selecionado
         if(this.selected && sameDate(dt,this.selected)) classes.push('mds-selected');
-        cells.push(`<div class="${classes.join(' ')}" data-day="${d}">${d}</div>`);
+
+        // Bloqueio por min/max
+        let disabled = false;
+        if(this.opts.min && dt < this.opts.min) disabled = true;
+        if(this.opts.max && dt > this.opts.max) disabled = true;
+
+        if(disabled){
+          classes.push('mds-disabled');
+          cells.push(`<div class="${classes.join(' ')}">${d}</div>`);
+        } else {
+          cells.push(`<div class="${classes.join(' ')}" data-day="${d}">${d}</div>`);
+        }
       }
+
       this.grid.innerHTML = cells.join('');
     }
   }
   window.MDSDatepicker = MDSDatepicker;
+
+  const tomorrow = new Date();
+  tomorrow.setDate(tomorrow.getDate() + 1);
+
+  const max = new Date();
+  max.setFullYear(max.getFullYear() + 2);
+
+  new MDSDatepicker(document.getElementById("departureDate"), {
+    format: 'yyyy-mm-dd',
+    min: tomorrow,
+    max: max
+  });
 })();

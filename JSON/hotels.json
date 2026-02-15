@@ -1,0 +1,124 @@
+{
+  "uzbekistan1":{
+    "name": "Uzebequistão e Turcomenistão",
+    "hotels": [
+        {
+          "hotel": "Crowne Plaza Tashkent",
+          "url": "https://www.ihg.com/crowneplaza/hotels/pt/pt/tashkent/tastm/hoteldetail",
+          "local": "Tashkent",
+          "noites": 3,
+          "regime": "PA",
+          "preco": 276.00
+        },
+        {
+          "hotel": "Zarafshon Parkside",
+          "url": "https://www.zarafshonparkside.com/en/home",
+          "local": "Samarcanda",
+          "noites": 2,
+          "regime": "PA",
+          "preco": 165.00
+        },
+        {
+          "hotel": "Kukaldosh Boutique Hotel",
+          "url": "https://www.booking.com/hotel/uz/kukaldosh.pt-pt.html?aid=356980&label=gog235jc-10CAso7gFCCWt1a2FsZG9zaEgzWANoRogBAZgBM7gBB8gBDNgBA-gBAfgBAYgCAagCAbgC0_DjywbAAgHSAiRhNWFjNDg5NC0zMjcxLTQzMDEtOTU3OS1hNzExM2RmMWZlOTHYAgHgAgE&sid=870b178448d73cef57e8697f06836b45&all_sr_blocks=107690014_118520059_2_41_0_860339&checkin=2026-04-10&checkout=2026-04-12&dest_id=-2575720&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&highlighted_blocks=107690014_118520059_2_41_0_860339&hpos=1&matching_block_id=107690014_118520059_2_41_0_860339&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=107690014_118520059_2_41_0_860339_23723&srepoch=1769535589&srpvid=90127c2f49ac05ef&type=total&ucfs=1&",
+          "local": "Bucara",
+          "noites": 2,
+          "regime": "PA",
+          "preco": 107.00
+        },
+        {
+          "hotel": "Oasis al Khiva Boutique Hotel Inside Citadel",
+          "url": "https://www.booking.com/hotel/uz/oasis-al-khiva-boutique.pt-pt.html?aid=304142&label=gen173nr-10CAEoggI46AdIM1gEaLsBiAEBmAEzuAEHyAEM2AED6AEB-AEBiAIBqAIBuALzxb7LBsACAdICJDEyODQ4NmY2LThmYTEtNGQ5MS05N2RlLTI0NjI3YjM2MWQ3Y9gCAeACAQ&sid=870b178448d73cef57e8697f06836b45&all_sr_blocks=1432006101_414826359_0_2_0&checkin=2026-04-12&checkout=2026-04-13&dest_id=-2577285&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&highlighted_blocks=1432006101_414826359_0_2_0&hpos=1&matching_block_id=1432006101_414826359_0_2_0&nflt=review_score%3D90&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=1432006101_414826359_0_2_0__5190&srepoch=1769533776&srpvid=fed678a063a80028&type=total&ucfs=1&",
+          "local": "Khiva",
+          "noites": 2,
+          "regime": "PA",
+          "preco": 48.00
+        },
+        {
+          "hotel": "Tour",
+          "url": "https://www.getyourguide.com/pt-pt/tashauz-l201621/de-khiva-aventura-de-4-dias-no-turquemenistao-com-a-cratera-de-darvaza-t1154300/?visitor-id=DR7ACBXZC46FL1KI0CO5ZSHMD9Y9BH4T&locale_autoredirect_optout=true",
+          "local": "Turcomenistão",
+          "noites": 3,
+          "regime": "Tour",
+          "preco": 850.00
+        },
+        {
+          "hotel": "Premium Hotel Labi Rud",
+          "url": "https://www.booking.com/hotel/uz/malika-sultan-inn.pt-pt.html?label=gen173nr-10CAEoggI46AdIM1gEaLsBiAEBmAEzuAEHyAEM2AED6AEB-AEBiAIBqAIBuALzxb7LBsACAdICJDEyODQ4NmY2LThmYTEtNGQ5MS05N2RlLTI0NjI3YjM2MWQ3Y9gCAeACAQ&aid=304142&ucfs=1&checkin=2026-04-17&checkout=2026-04-18&dest_id=-2575720&dest_type=city&group_adults=2&no_rooms=1&group_children=0&srpvid=ce397f524c4b0690&srepoch=1769537217&matching_block_id=1353043803_407633032_2_1_0_794701&atlas_src=sr_iw_title",
+          "local": "Bucara",
+          "noites": 1,
+          "regime": "PA",
+          "preco": 58.50
+        }
+      ]
+  },
+  "patagonia1": {
+    "name": "Patagónia + Buenos Aires + Rio",
+    "hotels": [
+      {
+        "hotel": "Hotel Plaza San Francisco",
+        "url": "https://www.booking.com/hotel/cl/plaza-san-francisco.pt-pt.html?aid=304142&label=gen173nr-10CAEoggI46AdIM1gEaEaIAQGYATO4AQfIAQzYAQPoAQH4AQGIAgGoAgG4AszVlMwGwAIB0gIkN2IxMTc4MTYtNjU5Yi00NDYxLTlmMjMtZjQwMTlkZTAxZDVl2AIB4AIB&sid=957479400a6c1f6c3601ef700b18ccfb&all_sr_blocks=17627103_91910720_2_41_0_264227&checkin=2026-11-03&checkout=2026-11-06&dest_id=-901202&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=5&highlighted_blocks=17627103_91910720_2_41_0_264227&hpos=5&matching_block_id=17627103_91910720_2_41_0_264227&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=17627103_91910720_2_41_0_264227_42436&srepoch=1770335031&srpvid=26dda6b188dd0326&type=total&ucfs=1&",
+        "local": "Santiago",
+        "noites": 3,
+        "regime": "PA",
+        "preco": 180.00
+      },
+      {
+        "hotel": "Hotel Costanera",
+        "url": "https://www.booking.com/hotel/cl/costanera-puerto-natales.pt-pt.html?aid=304142&label=gen173nr-10CAEoggI46AdIM1gEaEaIAQGYATO4AQfIAQzYAQPoAQH4AQGIAgGoAgG4AszVlMwGwAIB0gIkN2IxMTc4MTYtNjU5Yi00NDYxLTlmMjMtZjQwMTlkZTAxZDVl2AIB4AIB&sid=957479400a6c1f6c3601ef700b18ccfb&all_sr_blocks=933751501_365458647_2_1_0_220813&checkin=2026-11-06&checkout=2026-11-09&dist=0&group_adults=2&group_children=0&hapos=3&highlighted_blocks=933751501_365458647_2_1_0_220813&hpos=3&matching_block_id=933751501_365458647_2_1_0_220813&nflt=roomfacility%3D38%3Breview_score%3D80%3Bht_id%3D204&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=933751501_365458647_2_1_0_220813_77836&srepoch=1770335103&srpvid=befca6eca70c0070&type=total&ucfs=1&",
+        "local": "Puerto Natales",
+        "noites": 3,
+        "regime": "PA",
+        "preco": 330.00
+      },
+      {
+        "hotel": "Hotel Cabo de Hornos",
+        "url": "https://www.booking.com/hotel/cl/cabo-de-hornos.pt-pt.html?aid=304142&label=gen173nr-10CAEoggI46AdIM1gEaEaIAQGYATO4AQfIAQzYAQPoAQH4AQGIAgGoAgG4AszVlMwGwAIB0gIkN2IxMTc4MTYtNjU5Yi00NDYxLTlmMjMtZjQwMTlkZTAxZDVl2AIB4AIB&sid=957479400a6c1f6c3601ef700b18ccfb&all_sr_blocks=27440301_89155844_0_41_0&checkin=2026-11-09&checkout=2026-11-11&dest_id=-897667&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&highlighted_blocks=27440301_89155844_0_41_0&hpos=1&matching_block_id=27440301_89155844_0_41_0&nflt=review_score%3D80%3Broomfacility%3D38&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=27440301_89155844_0_41_0__53000&srepoch=1770335215&srpvid=1f8ea7295e790367&type=total&ucfs=1&",
+        "local": "Punta Arenas",
+        "noites": 2,
+        "regime": "PA",
+        "preco": 224.50
+      },
+      {
+        "hotel": "Errante Ecolodge",
+        "url": "https://www.booking.com/hotel/cl/errante-ecolodge.pt-pt.html?aid=304142&label=gen173nr-10CAEoggI46AdIM1gEaEaIAQGYATO4AQfIAQzYAQPoAQH4AQGIAgGoAgG4AszVlMwGwAIB0gIkN2IxMTc4MTYtNjU5Yi00NDYxLTlmMjMtZjQwMTlkZTAxZDVl2AIB4AIB&sid=957479400a6c1f6c3601ef700b18ccfb&all_sr_blocks=191541404_413431291_2_40_0&checkin=2026-11-11&checkout=2026-11-12&dest_id=-897524&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=2&highlighted_blocks=191541404_413431291_2_40_0&hpos=2&matching_block_id=191541404_413431291_2_40_0&nflt=roomfacility%3D38%3Breview_score%3D80&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=191541404_413431291_2_40_0__25704&srepoch=1770335292&srpvid=e19ba7527f0f00ce&type=total&ucfs=1&",
+        "local": "Puerto Williams",
+        "noites": 1,
+        "regime": "PA",
+        "preco": 109.00
+      },
+      {
+        "hotel": "Hotel Canal Beagle",
+        "url": "https://www.booking.com/hotel/ar/canal-beagle-ushuaia.pt-pt.html?aid=304142&label=gen173nr-10CAEoggI46AdIM1gEaEaIAQGYATO4AQfIAQzYAQPoAQH4AQGIAgGoAgG4AszVlMwGwAIB0gIkN2IxMTc4MTYtNjU5Yi00NDYxLTlmMjMtZjQwMTlkZTAxZDVl2AIB4AIB&sid=957479400a6c1f6c3601ef700b18ccfb&all_sr_blocks=801707902_341407502_2_1_0&checkin=2026-11-12&checkout=2026-11-14&dest_id=-1018179&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=2&highlighted_blocks=801707902_341407502_2_1_0&hpos=2&matching_block_id=801707902_341407502_2_1_0&nflt=review_score%3D80%3Broomfacility%3D38%3Bht_id%3D204&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=801707902_341407502_2_1_0__36320&srepoch=1770335402&srpvid=4bada7858a59031c&type=total&ucfs=1&",
+        "local": "Ushuaia",
+        "noites": 2,
+        "regime": "PA",
+        "preco": 154.00
+      },
+      {
+        "hotel": "Esplendor by Wyndham",
+        "url": "https://www.booking.com/hotel/ar/esplendor-calafate.pt-pt.html?aid=304142&label=gen173nr-10CAEoggI46AdIM1gEaEaIAQGYATO4AQfIAQzYAQPoAQH4AQGIAgGoAgG4AszVlMwGwAIB0gIkN2IxMTc4MTYtNjU5Yi00NDYxLTlmMjMtZjQwMTlkZTAxZDVl2AIB4AIB&sid=957479400a6c1f6c3601ef700b18ccfb&all_sr_blocks=7925609_90438237_3_1_0&checkin=2026-11-14&checkout=2026-11-16&dest_id=-985388&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=14&highlighted_blocks=7925609_90438237_3_1_0&hpos=14&matching_block_id=7925609_90438237_3_1_0&nflt=roomfacility%3D38%3Bht_id%3D204%3Breview_score%3D80&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=7925609_90438237_3_1_0__65484&srepoch=1770335465&srpvid=af30a7ab11aa009d&type=total&ucfs=1&",
+        "local": "El Calafate",
+        "noites": 2,
+        "regime": "PA",
+        "preco": 277.50
+      },
+      {
+        "hotel": "Palo Santo Hotel",
+        "url": "https://www.palosantohotel.com/",
+        "local": "Buenos Aires",
+        "noites": 1,
+        "regime": "PA",
+        "preco": 223.00
+      },
+      {
+        "hotel": "Fairmont Rio",
+        "url": "https://www.booking.com/hotel/br/rio-de-janeiro.pt-pt.html?aid=304142&label=gen173nr-10CAEoggI46AdIM1gEaEaIAQGYATO4AQfIAQzYAQPoAQH4AQGIAgGoAgG4AszVlMwGwAIB0gIkN2IxMTc4MTYtNjU5Yi00NDYxLTlmMjMtZjQwMTlkZTAxZDVl2AIB4AIB&sid=957479400a6c1f6c3601ef700b18ccfb&all_sr_blocks=1182540_95134727_2_34_0&checkin=2026-11-18&checkout=2026-11-23&dest_id=11825&dest_type=hotel&dist=0&group_adults=2&group_children=0&hapos=1&highlighted_blocks=1182540_95134727_2_34_0&hpos=1&matching_block_id=1182540_95134727_2_34_0&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=1182540_95134727_2_34_0__1108383&srepoch=1770335697&srpvid=d5b2a82379c104be&type=total&ucfs=1&",
+        "local": "Rio de Janeiro",
+        "noites": 5,
+        "regime": "PA",
+        "preco": 1130.00
+      }
+    ]
+  }
+}

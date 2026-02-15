@@ -601,3 +601,56 @@ footer a:hover {
     .group{ margin:8px 0; }
     .group h4{ margin:6px 0 4px 0; color:#1F4E78; font-size:1rem; }
     .bullet{ margin:3px 0; }
+
+
+
+    /* Botão principal de pesquisa */
+
+.btn-search:hover {
+  background: #163a5a;
+}
+
+.btn-search:active {
+  transform: scale(0.97);
+}
+
+.btn-search:focus {
+  outline: 3px solid rgba(31, 78, 120, 0.4);
+}
+
+
+/* Wrapper da coluna do botão */
+.search-btn-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  align-items: end;
+}
+
+/* Linha do formulário */
+.flight-row {
+  display: flex;
+  align-items: end;
+  gap: 16px;
+}
+
+/* A coluna do input ocupa todo o espaço */
+.flight-input {
+  flex: 1;
+}
+
+
+
+/* Botão compacto */
+.btn-search {
+  padding: 10px 16px;
+  background: #1F4E78;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: .95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all .2s ease;
+  height: 42px;
+  white-space: nowrap;
+}

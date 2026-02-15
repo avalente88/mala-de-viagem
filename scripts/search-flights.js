@@ -137,7 +137,7 @@ function getAirportLabel(code) {
 // Load data as soon as the page opens
 loadAirports();
 
-  function getStops(itinerary) {
+function getStops(itinerary) {
   const segments = itinerary.segments;
   const stops = [];
 

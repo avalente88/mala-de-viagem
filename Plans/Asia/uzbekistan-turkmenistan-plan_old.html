@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Plano de Viagem — Uzbequistão 2026</title>
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400..700&family=Great+Vibes&display=swap" rel="stylesheet">
+<script>
+  // Aplica data-labels a todas as TD com base no texto dos TH
+  function applyDataLabels(table) {
+    if (!table) return;
+    const ths = Array.from(table.querySelectorAll('thead th'));
+    if (!ths.length) return;
+
+    // Extrai os textos dos TH (tratando espaços e quebras)
+    const headers = ths.map(th => (th.textContent || '').replace(/\s+/g, ' ').trim());
+
+    // Aplica em cada TD
+    table.querySelectorAll('tbody tr').forEach(tr => {
+      Array.from(tr.children).forEach((td, i) => {
+        const label = headers[i] || '';
+        if (label) td.setAttribute('data-label', label);
+      });
+    });
+  }
+
+  // Aplica aos seletores desejados
+  function makeStackedTables(...selectors) {
+    selectors.forEach(sel => {
+      document.querySelectorAll(sel).forEach(applyDataLabels);
+    });
+  }
+
+  // Corre quando o DOM estiver pronto
+  document.addEventListener('DOMContentLoaded', function() {
+    makeStackedTables('#voos table', '#hoteis table');
+
+    // OPCIONAL: se a tua página renderiza/atualiza tabelas via JS depois do load
+    // ativa este observer para voltar a aplicar labels quando o tbody mudar
+    const observer = new MutationObserver(() => {
+      makeStackedTables('#voos table', '#hoteis table');
+    });
+    document.querySelectorAll('#voos table tbody, #hoteis table tbody').forEach(tbody => {
+      observer.observe(tbody, { childList: true, subtree: true });
+    });
+  });
+</script>
+
+</head>
+<body>
+  <!-- Top Navigation Bar -->
+  <nav class="top-navbar">
+      <ul>
+          <li><a href="../../index.html">Home</a></li>
+          <li><a href="../../contacts.html">Contactos</a></li>
+      </ul>
+  </nav>
+
+  <!-- Hero -->
+  <header class="header-top" id="home">
+    <div class="profile-container">
+      <img src="../../Images/Designer.png" alt="Mala de Sonhos by Ana Valente">
+    </div>
+
+  </header>
+
+  <main class="container">
+
+    <!-- Resumo -->
+    <section id="resumo" class="card">
+      <h2 class="section-title">Resumo</h2>
+      <div class="grid-2">
+        <div>
+          <p><strong>Itinerário:</strong> Tashkent → Samarcanda → Bucara → Khiva → Darvaza/Ashgabat/Mary → Bucara → Tashkent → Lisboa</p>
+        </div>
+        <div class="right">
+          <p class="total">TOTAL: 2&nbsp;486,50&nbsp;€</p>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Galeria de fotos do destino -->
+    <section id="fotos" class="card">
+      <h2 class="section-title">Fotos do destino</h2>
+      <div class="gallery">
+        <figure>
+          <img src="../../Images/UZ/tashkent.jpg" alt="Tashkent" />
+          <figcaption>Tashkent</figcaption>
+        </figure>
+        <figure>
+          <img src="../../Images/UZ/registan_samarkand.jpg" alt="Registan, Samarcanda" />
+          <figcaption>Samarcanda</figcaption>
+        </figure>
+        <figure>
+          <img src="../../Images/UZ/bukhara.jpg" alt="Bucara" />
+          <figcaption>Bucara</figcaption>
+        </figure>
+        <figure>
+          <img src="../../Images/UZ/khiva.jpg" alt="Khiva" />
+          <figcaption>Khiva</figcaption>
+        </figure>
+        <figure>
+          <img src="../../Images/UZ/darvaza.jpg" alt="Cratér de Darvaza" />
+          <figcaption>Darvaza</figcaption>
+        </figure>
+        <figure>
+          <img src="../../Images/UZ/ashgabat.jpg" alt="Ashgabat" />
+          <figcaption>Ashgabat</figcaption>
+        </figure>
+        <figure>
+          <img src="../../Images/UZ/mary_merv.jpg" alt="Mary (Merv)" />
+          <figcaption>Mary / Merv</figcaption>
+        </figure>
+        <figure>
+          <img src="../../Images/UZ/fergana.jpg" alt="Vale de Fergana" />
+          <figcaption>Vale de Fergana</figcaption>
+        </figure>
+      </div>
+      </section>
+
+<section id="nota" class="card">
+  <div class="notice notice-banner" role="note" aria-label="Aviso">
+    Este plano é indicativo para se ter uma noção de duração, escalas de voos e preço médio de hotéis.
+    Os preços estão susceptíves a alterações. A pesquisa foi feita com 3 meses de antecedência. 
+  </div>
+  <!-- resto do conteúdo -->
+</section>
+
+    <!-- Voos -->
+    <section id="voos" class="card">
+      <h2 class="section-title">Voos</h2>
+      <table aria-label="Voos">
+        <thead>
+          <tr>
+            <th>Voos</th>
+            <th>Data</th>
+            <th>Origem</th>
+            <th>Destino</th>
+            <th>Partida</th>
+            <th>Chegada</th>
+            <th>Tempo</th>
+            <th>Escala</th>
+            <th class="right">Preço</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>TK1780 + TK370</td>
+            <td>05-abr.-26</td>
+            <td>Lisbon - LIS</td>
+            <td>Taskent - TAS</td>
+            <td>06:00</td>
+            <td>00:40</td>
+            <td>14:40</td>
+            <td>05:30</td>
+            <td class="right">797,00&nbsp;€</td>
+          </tr>
+          <tr>
+            <td>HY61</td>
+            <td>12-abr.-26</td>
+            <td>Bucara - BHK</td>
+            <td>Urgench - UGC</td>
+            <td>09:15</td>
+            <td>10:05</td>
+            <td>00:50</td>
+            <td></td>
+            <td class="right">70,00&nbsp;€</td>
+          </tr>
+          <tr>
+            <td>UH802</td>
+            <td>18-abr.-26</td>
+            <td>Bucara - BHK</td>
+            <td>Taskent - TAS</td>
+            <td>08:30</td>
+            <td>09:50</td>
+            <td>01:20</td>
+            <td></td>
+            <td class="right">75,00&nbsp;€</td>
+          </tr>
+          <tr>
+            <td>TK367 + TK1779</td>
+            <td>18-abr.-26</td>
+            <td>Taskent - TAS</td>
+            <td>Lisbon - LIS</td>
+            <td>15:15</td>
+            <td>23:30</td>
+            <td>12:15</td>
+            <td>01:50</td>
+            <td class="right">—</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Hotéis (com links) -->
+    <section id="hoteis" class="card">
+      <h2 class="section-title">Hotéis</h2>
+      <table aria-label="Hotéis">
+        <thead>
+          <tr>
+            <th>Hotel</th>
+            <th>Local</th>
+            <th>Check‑in</th>
+            <th>Check‑out</th>
+            <th>Noites</th>
+            <th>Regime</th>
+            <th class="right">Preço</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><a class="hotel" href="https://www.ihg.com/crowneplaza/hotels/pt/pt/tashkent/tastm/hoteldetail" target="_blank" rel="noopener">Crowne Plaza Tashkent</a></td>
+            <td>Tashkent</td>
+            <td>5 abril</td>
+            <td>8 abril</td>
+            <td>3</td>
+            <td>PA</td>
+            <td class="right">276,00&nbsp;€</td>
+          </tr>
+          <tr>
+            <td><a class="hotel" href="https://www.zarafshonparkside.com/en/home" target="_blank" rel="noopener">Zarafshon Parkside</a></td>
+            <td>Samarcanda</td>
+            <td>8 abril</td>
+            <td>10 abril</td>
+            <td>2</td>
+            <td>PA</td>
+            <td class="right">165,00&nbsp;€</td>
+          </tr>
+          <tr>
+            <td><a class="hotel" href="https://www.booking.com/hotel/uz/kukaldosh.pt-pt.html?aid=356980&label=gog235jc-10CAso7gFCCWt1a2FsZG9zaEgzWANoRogBAZgBM7gBB8gBDNgBA-gBAfgBAYgCAagCAbgC0_DjywbAAgHSAiRhNWFjNDg5NC0zMjcxLTQzMDEtOTU3OS1hNzExM2RmMWZlOTHYAgHgAgE&sid=870b178448d73cef57e8697f06836b45&all_sr_blocks=107690014_118520059_2_41_0_860339&checkin=2026-04-10&checkout=2026-04-12&dest_id=-2575720&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&highlighted_blocks=107690014_118520059_2_41_0_860339&hpos=1&matching_block_id=107690014_118520059_2_41_0_860339&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=107690014_118520059_2_41_0_860339_23723&srepoch=1769535589&srpvid=90127c2f49ac05ef&type=total&ucfs=1&" target="_blank" rel="noopener">Kukaldosh Boutique Hotel</a></td>
+            <td>Bucara</td>
+            <td>10 abril</td>
+            <td>12 abril</td>
+            <td>2</td>
+            <td>PA</td>
+            <td class="right">107,00&nbsp;€</td>
+          </tr>
+          <tr>
+            <td><a class="hotel" href="https://www.booking.com/hotel/uz/oasis-al-khiva-boutique.pt-pt.html?aid=304142&label=gen173nr-10CAEoggI46AdIM1gEaLsBiAEBmAEzuAEHyAEM2AED6AEB-AEBiAIBqAIBuALzxb7LBsACAdICJDEyODQ4NmY2LThmYTEtNGQ5MS05N2RlLTI0NjI3YjM2MWQ3Y9gCAeACAQ&sid=870b178448d73cef57e8697f06836b45&all_sr_blocks=1432006101_414826359_0_2_0&checkin=2026-04-12&checkout=2026-04-13&dest_id=-2577285&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&highlighted_blocks=1432006101_414826359_0_2_0&hpos=1&matching_block_id=1432006101_414826359_0_2_0&nflt=review_score%3D90&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=1432006101_414826359_0_2_0__5190&srepoch=1769533776&srpvid=fed678a063a80028&type=total&ucfs=1&" target="_blank" rel="noopener">Oasis al Khiva Boutique Hotel Inside Citadel</a></td>
+            <td>Khiva</td>
+            <td>12 abril</td>
+            <td>14 abril</td>
+            <td>2</td>
+            <td>PA</td>
+            <td class="right">48,00&nbsp;€</td>
+          </tr>
+          <tr>
+            <td><a class="hotel" href="https://www.getyourguide.com/pt-pt/tashauz-l201621/de-khiva-aventura-de-4-dias-no-turquemenistao-com-a-cratera-de-darvaza-t1154300/?visitor-id=DR7ACBXZC46FL1KI0CO5ZSHMD9Y9BH4T&locale_autoredirect_optout=true" target="_blank" rel="noopener">Tour</a></td>
+            <td>Turcomenistão</td>
+            <td>14 abril</td>
+            <td>17 abril</td>
+            <td>3</td>
+            <td>Tour</td>
+            <td class="right">850,00&nbsp;€</td>
+          </tr>
+          <tr>
+            <td><a class="hotel" href="https://www.booking.com/hotel/uz/malika-sultan-inn.pt-pt.html?label=gen173nr-10CAEoggI46AdIM1gEaLsBiAEBmAEzuAEHyAEM2AED6AEB-AEBiAIBqAIBuALzxb7LBsACAdICJDEyODQ4NmY2LThmYTEtNGQ5MS05N2RlLTI0NjI3YjM2MWQ3Y9gCAeACAQ&aid=304142&ucfs=1&checkin=2026-04-17&checkout=2026-04-18&dest_id=-2575720&dest_type=city&group_adults=2&no_rooms=1&group_children=0&srpvid=ce397f524c4b0690&srepoch=1769537217&matching_block_id=1353043803_407633032_2_1_0_794701&atlas_src=sr_iw_title" target="_blank" rel="noopener">Premium Hotel Labi Rud</a></td>
+            <td>Bucara</td>
+            <td>17 abril</td>
+            <td>18 abril</td>
+            <td>1</td>
+            <td>PA</td>
+            <td class="right">58,50&nbsp;€</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="muted">👉 Os preços indicados são por pessoa em quarto duplo.</p>
+    </section>
+
+<!-- ========================= -->
+<!-- PLANO DIÁRIO COM DETALHES EM LINHA -->
+<!-- ========================= -->
+<section id="plano" class="card">
+  <h2 class="section-title">Plano diário</h2>
+
+  <!-- Legenda e ações -->
+  <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; margin-bottom:10px;">
+    <p class="muted" style="margin:0;">
+      <span class="tag tag-voo">voo</span>
+      <span class="tag tag-comboio">comboio</span>
+      <span class="tag tag-estrada">estrada</span>
+    </p>
+    <div style="display:flex; gap:8px;">
+      <button type="button" class="btn-outline" id="expandAll">Expandir todos</button>
+      <button type="button" class="btn-outline" id="collapseAll">Ocultar todos</button>
+    </div>
+  </div>
+
+  <!-- Lista é gerada por JS -->
+  <div id="dailyList"></div>
+</section>
+
+<style>
+  /* Linhas “simples” do dia */
+  .day-line{
+    display:flex; align-items:center; justify-content:space-between;
+    border-left:4px solid #5dcbed; padding:10px 12px; margin:10px 0;
+    background:rgba(255,255,255,.8); border-radius:8px;
+  }
+  .day-line .left{ display:flex; gap:10px; align-items:center; flex-wrap:wrap; }
+  .day-line .date{ font-weight:700; color:#1F4E78; white-space:nowrap; }
+  .day-line .city{ color:#333; }
+
+  /* Tags de transporte (cores fixas) */
+  .tag{ display:inline-block; padding:4px 8px; border-radius:12px; font-size:.85rem; line-height:1.2; color:#fff; }
+  .tag-voo{ background:#5dcbed; }
+  .tag-comboio{ background:#7cc576; }
+  .tag-estrada{ background:#c293d8; }
+
+  /* Botão estilo .tag usando a cor da antiga “táxi” (#f7b1c3) */
+  .btn-tag{
+    display:inline-block; border:none; cursor:pointer;
+    padding:4px 10px; border-radius:12px; font-size:.85rem; line-height:1.2;
+    background:#f7b1c3; color:#fff;
+  }
+  .btn-tag:hover{ filter:brightness(.95); }
+  .btn-tag:focus{ outline:2px solid #1F4E78; outline-offset:2px; }
+
+  /* Botões utilitários (expandir/ocultar) no topo */
+  .btn-outline{
+    background:transparent; color:#1F4E78; border:1px solid #1F4E78;
+    padding:6px 10px; border-radius:8px; cursor:pointer; font-size:.9rem;
+  }
+  .btn-outline:hover{ background:#1F4E78; color:#fff; }
+
+  /* Contentor de detalhes (expansion) */
+  .day-details{
+    padding:10px 12px 6px 12px; border-left:4px solid #c293d8;
+    background:rgba(255,255,255,.9); border-radius:0 0 8px 8px;
+    margin-top:-8px; display:none;
+  }
+  .day-details.open{ display:block; }
+
+  .group{ margin:8px 0; }
+  .group h4{ margin:6px 0 4px 0; color:#1F4E78; font-size:1rem; }
+  .bullet{ margin:3px 0; }
+</style>
+
+<script>
+  // ----------------------------
+  // Dados do plano por dia (sem nomes de hotel; apenas "Chegada ao hotel")
+  // Transporte: voo | comboio | estrada
+  // ----------------------------
+  const daysData = [
+    {
+      date: "05 abril",
+      city: "Chegada a Tashkent",
+      transport: [{ type: "voo", text: "chegada" }],
+      details: [
+        { label: null, items: ["Chegada ~00:40", "Chegada ao hotel"] }
+      ]
+    },
+    {
+      date: "06 abril",
+      city: "Tashkent (dia completo)",
+      transport: [],
+      details: [
+        { label: "Manhã",  items: ["Complexo Khast Imam (Alcorão de Uthman)", "Biblioteca Moyie Mubarek"] },
+        { label: "Almoço", items: ["Central Asian Plov Center"] },
+        { label: "Tarde",  items: ["Bazar Chorsu", "Metrô: Kosmonavtlar · Alisher Navoi"] },
+        { label: "Noite",  items: ["Praça Amir Timur", "Jantar (Afsona ou Caravan)"] }
+      ]
+    },
+    {
+      date: "07 abril",
+      city: "Tashkent (moderno + cultura)",
+      transport: [],
+      details: [
+        { label: "Visitas", items: ["Museu de Artes Aplicadas", "Museu de História do Uzbequistão"] },
+        { label: "Parques", items: ["Parque Alisher Navoi", "Tashkent City Park"] },
+        { label: "Nota",    items: ["Preparar malas (comboio cedo)"] }
+      ]
+    },
+    {
+      date: "08 abril",
+      city: "Tashkent → Samarcanda",
+      transport: [{ type: "comboio", text: "08:37 → 11:46" }],
+      details: [
+        { label: "Manhã",      items: ["Ida de manhã para a estação de comboios (bilhete de 20€).","Chegada ao hotel"] },
+        { label: "Tarde",   items: ["Mausoléu Gur‑e Amir", "Passeio pelo centro histórico"] },
+        { label: "Noite",   items: ["Registan iluminado (imperdível)"] }
+      ]
+    },
+    {
+      date: "09 abril",
+      city: "Samarcanda (dia completo)",
+      transport: [],
+      details: [
+        { label: "Manhã",  items: ["Registan (madraças)", "Mesquita Bibi‑Khanym"] },
+        { label: "Almoço", items: ["Zona do Bazar Siab"] },
+        { label: "Tarde",  items: ["Shah‑i‑Zinda (ritmo calmo)", "Chá em chaikhana tradicional"] }
+      ]
+    },
+    {
+      date: "10 abril",
+      city: "Samarcanda → Bucara",
+      transport: [{ type: "comboio", text: "09:53 → 11:42" }],
+      details: [
+        { label: null,    items: ["Chegada ao hotel"] },
+        { label: "Passeio", items: ["Lyabi‑Hauz", "Nadir Divan‑Begi"] }
+      ]
+    },
+    {
+      date: "11 abril",
+      city: "Bucara (dia completo)",
+      transport: [],
+      details: [
+        { label: "Manhã",  items: ["Ark Fortress", "Bolo‑Haouz Mosque", "Po‑i‑Kalyan (minarete + mesquita)"] },
+        { label: "Tarde",  items: ["Chor Minor", "Cúpulas comerciais (Toqi Zargaron, Toqi Sarrafon)"] },
+        { label: "Noite",  items: ["Cidade iluminada"] }
+      ]
+    },
+    {
+      date: "12 abril",
+      city: "Bucara → Khiva",
+      transport: [{ type: "voo", text: "" }, { type: "estrada", text: "" }],
+      details: [
+        { label: null,   items: ["Chegada ao hotel"] },
+        { label: "Tarde", items: ["Primeira volta por Itchan Kala (cidade murada)"] },
+        { label: "Noite", items: ["Pôr do sol nas muralhas", "Jantar dentro da cidade antiga"] }
+      ]
+    },
+    {
+      date: "13 abril",
+      city: "Khiva (dia completo)",
+      transport: [],
+      details: [
+        { label: "Manhã", items: ["Kunya Ark", "Minarete Kalta Minor", "Palácio Tash‑Hauli"] },
+        { label: "Tarde", items: ["Madrasa de Muhammad Amin Khan", "Minarete Islam Khodja (vista elevada)"] },
+        { label: "Noite", items: ["Passeio final pela cidade murada"] }
+      ]
+    },
+    {
+      date: "14 abril",
+      city: "Khiva → Darvaza (Turcomenistão)",
+      transport: [{ type: "estrada", text: "" }],
+      details: [
+        { label: "Destaque", items: ["Cratera de gás (Porta do Inferno)"] }
+      ]
+    },
+    {
+      date: "15 abril",
+      city: "Darvaza → Ashgabat",
+      transport: [{ type: "estrada", text: "" }],
+      details: [
+        { label: "Cidade", items: ["Monumentos de mármore · paisagem urbana singular"] }
+      ]
+    },
+    {
+      date: "16 abril",
+      city: "Ashgabat → Mary · Merv (UNESCO)",
+      transport: [{ type: "estrada", text: "" }],
+      details: [
+        { label: "História", items: ["Merv Antiga · Rota da Seda"] }
+      ]
+    },
+    {
+      date: "17 abril",
+      city: "Mary → Bucara",
+      transport: [{ type: "estrada", text: "" }],
+      details: [
+        { label: null, items: ["Chegada ao hotel"] }
+      ]
+    },
+    {
+      date: "18 abril",
+      city: "Bucara → Tashkent → Lisboa",
+      transport: [{ type: "voo", text: "" }],
+      details: [
+        { label: "Regresso", items: ["Voo para Lisboa"] }
+      ]
+    }
+  ];
+
+  // ----------------------------
+  // Helpers de UI
+  // ----------------------------
+  const colorByType = (type) => {
+    if(type === "voo") return "tag-voo";
+    if(type === "comboio") return "tag-comboio";
+    return "tag-estrada";
+  };
+
+  // ----------------------------
+  // Render
+  // ----------------------------
+  const root = document.getElementById('dailyList');
+
+  daysData.forEach((d, idx) => {
+    // Linha simples
+    const line = document.createElement('div');
+    line.className = 'day-line';
+    line.setAttribute('data-index', idx);
+
+    const left = document.createElement('div');
+    left.className = 'left';
+
+    const date = document.createElement('div');
+    date.className = 'date';
+    date.textContent = d.date;
+
+    const city = document.createElement('div');
+    city.className = 'city';
+    city.textContent = '— ' + d.city;
+
+    left.appendChild(date);
+    left.appendChild(city);
+
+    // Tags de transporte (sem emojis)
+    if (d.transport && d.transport.length){
+      d.transport.forEach(t => {
+        const span = document.createElement('span');
+        span.className = `tag ${colorByType(t.type)}`;
+        span.textContent = t.text ? `${t.type} ${t.text}` : t.type;
+        left.appendChild(span);
+      });
+    }
+
+    // Botão "Ver detalhes" com a cor da antiga tag táxi (#f7b1c3)
+    const btn = document.createElement('button');
+    btn.className = 'btn-tag';
+    btn.type = 'button';
+    btn.setAttribute('aria-expanded', 'false');
+    btn.setAttribute('aria-controls', `details-${idx}`);
+    btn.textContent = 'Ver detalhes';
+
+    // Wrapper da linha
+    line.appendChild(left);
+    line.appendChild(btn);
+
+    // Bloco de detalhes (inicialmente fechado)
+    const details = document.createElement('div');
+    details.className = 'day-details';
+    details.id = `details-${idx}`;
+
+    (d.details || []).forEach(group => {
+      const wrap = document.createElement('div');
+      wrap.className = 'group';
+      if (group.label){
+        const h4 = document.createElement('h4');
+        h4.textContent = group.label;
+        wrap.appendChild(h4);
+      }
+      (group.items || []).forEach(it => {
+        const p = document.createElement('div');
+        p.className = 'bullet';
+        p.textContent = '• ' + it;
+        wrap.appendChild(p);
+      });
+      details.appendChild(wrap);
+    });
+
+    // Clique: abre/fecha abaixo do dia
+    btn.addEventListener('click', () => {
+      const open = details.classList.contains('open');
+      details.classList.toggle('open');
+      btn.setAttribute('aria-expanded', String(!open));
+      btn.textContent = open ? 'Ver detalhes' : 'Ocultar';
+    });
+
+    // Anexa ao DOM
+    root.appendChild(line);
+    root.appendChild(details);
+  });
+
+  // ----------------------------
+  // Expandir / Ocultar todos
+  // ----------------------------
+  const expandAllBtn  = document.getElementById('expandAll');
+  const collapseAllBtn = document.getElementById('collapseAll');
+
+  expandAllBtn.addEventListener('click', () => {
+    document.querySelectorAll('.day-details').forEach((el, i) => {
+      el.classList.add('open');
+      const btn = document.querySelector(`.day-line[data-index="${i}"] .btn-tag`);
+      if(btn){ btn.setAttribute('aria-expanded','true'); btn.textContent = 'Ocultar'; }
+    });
+  });
+
+  collapseAllBtn.addEventListener('click', () => {
+    document.querySelectorAll('.day-details').forEach((el, i) => {
+      el.classList.remove('open');
+      const btn = document.querySelector(`.day-line[data-index="${i}"] .btn-tag`);
+      if(btn){ btn.setAttribute('aria-expanded','false'); btn.textContent = 'Ver detalhes'; }
+    });
+  });
+</script>
+
+  
+
+<section id="restaurantes" class="card">
+  <h2 class="section-title">Restaurantes</h2>
+
+  <div class="resto-grid">
+
+    <!-- TASHKENT -->
+    <div class="resto">
+      <h4>Tashkent</h4>
+
+      <div class="meta"><strong>Central Asian Plov Center</strong> — perto do centro</div>
+      <div class="tip">Plov obrigatório · Ideal antes das 14h</div>
+
+      <hr>
+
+      <div class="meta"><strong>Afsona</strong> — zona Amir Timur</div>
+      <div class="tip">Cozinha uzbeque moderna</div>
+
+      <hr>
+
+      <div class="meta"><strong>Caravan</strong> — centro</div>
+      <div class="tip">Ambiente tradicional · Bons manti e shashlik</div>
+
+      <hr>
+
+      <div class="meta"><strong>Dudek Brewery</strong> — Tashkent City</div>
+      <div class="tip">Cerveja artesanal · Ótimo após City Park</div>
+    </div>
+
+    <!-- SAMARCANDA -->
+    <div class="resto">
+      <h4>Samarcanda</h4>
+
+      <div class="meta"><strong>Old City Restaurant</strong> — perto do Gur‑e Amir</div>
+      <div class="tip">Prático e honesto</div>
+
+      <hr>
+
+      <div class="meta"><strong>Platan</strong> — centro histórico</div>
+      <div class="tip">Um dos melhores · Reserva recomendada</div>
+
+      <hr>
+
+      <div class="meta"><strong>Bibi‑Khanum Teahouse</strong> — atrás da mesquita</div>
+      <div class="tip">Ambiente lindíssimo · Pratos tradicionais</div>
+
+      <hr>
+
+      <div class="meta"><strong>Samarkand Restaurant</strong></div>
+      <div class="tip">Clássico · Bom e consistente</div>
+    </div>
+
+    <!-- BUCARA -->
+    <div class="resto">
+      <h4>Bucara</h4>
+
+      <div class="meta"><strong>Minzifa</strong> — cidade antiga</div>
+      <div class="tip">Terraço agradável</div>
+
+      <hr>
+
+      <div class="meta"><strong>Old Bukhara</strong></div>
+      <div class="tip">Muito tradicional</div>
+
+      <hr>
+
+      <div class="meta"><strong>Lyabi House</strong> — zona Lyabi‑Hauz</div>
+      <div class="tip">Perfeito entre visitas</div>
+
+      <hr>
+
+      <div class="meta"><strong>Chor Bakr Restaurant</strong></div>
+      <div class="tip">Ambiente calmo · Boa comida</div>
+
+      <hr>
+
+      <div class="meta"><strong>Labi Rud Restaurant</strong> — perto do hotel</div>
+      <div class="tip">Ótimo após dia de estrada</div>
+    </div>
+
+    <!-- KHIVA -->
+    <div class="resto">
+      <h4>Khiva</h4>
+
+      <div class="meta"><strong>Khorezm Art Restaurant</strong> — dentro de Itchan Kala</div>
+      <div class="tip">Cozinha regional</div>
+
+      <hr>
+
+      <div class="meta"><strong>Terrassa Café (Orient Star)</strong> — antiga madrassa</div>
+      <div class="tip">Vista incrível ao pôr do sol</div>
+
+      <hr>
+
+      <div class="meta"><strong>Zarafshan Café</strong></div>
+      <div class="tip">Simples e eficaz</div>
+
+      <hr>
+
+      <div class="meta"><strong>Mirzaboshi</strong> — dentro das muralhas</div>
+      <div class="tip">Perfeito para a última noite</div>
+    </div>
+
+  </div>
+</section>
+
+    <!-- Tours sugeridos -->
+    <section id="tours" class="card">
+      <h2 class="section-title">Tours que podes gostar</h2>
+      <ul>
+        <li>Vale de Fergana — a partir de Tashkent</li>
+        <li>Mar de Aral (seco) — a partir de Khiva</li>
+        <li>Deserto Kyzylkum — a partir de Bucara</li>
+      </ul>
+    </section>
+  </main>
+
+    <footer>
+        <p>&copy; 2026 TravelNow </p>
+
+    </footer>
+</body>
+</html>

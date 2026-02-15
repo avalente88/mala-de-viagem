@@ -10,6 +10,18 @@ export async function loadItinerary() {
 
 export const trips = await loadItinerary();
 
+export async function loadHotels() {
+    const responseHotels = await fetch("/JSON/hotels.json"); 
+    
+    const textHotels = await responseHotels.text(); 
+
+    const hotels = JSON.parse(textHotels); 
+    // 
+    return hotels;
+}
+
+export const hotels = await loadHotels();
+
 
 
 

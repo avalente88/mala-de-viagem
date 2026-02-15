@@ -1,9 +1,164 @@
 {
+  "uzbekistan1": {
+    "name": "Uzbequistão + Turcomenistão",
+    "days": [
+      {
+        "date": "Dia 1",
+        "city": "Chegada a Tashkent",
+        "transport": [
+          { "type": "voo", "text": "chegada" }
+        ],
+        "details": [
+          {
+            "label": null,
+            "items": ["Chegada ~00:40", "Chegada ao hotel"]
+          }
+        ]
+      },
+      {
+        "date": "Dia 2",
+        "city": "Tashkent (dia completo)",
+        "transport": [],
+        "details": [
+          { "label": "Manhã",  "items": ["Complexo Khast Imam (Alcorão de Uthman)", "Biblioteca Moyie Mubarek"] },
+          { "label": "Almoço", "items": ["Central Asian Plov Center"] },
+          { "label": "Tarde",  "items": ["Bazar Chorsu", "Metrô: Kosmonavtlar · Alisher Navoi"] },
+          { "label": "Noite",  "items": ["Praça Amir Timur", "Jantar (Afsona ou Caravan)"] }
+        ]
+      },
+      {
+        "date": "Dia 3",
+        "city": "Tashkent (moderno + cultura)",
+        "transport": [],
+        "details": [
+          { "label": "Visitas", "items": ["Museu de Artes Aplicadas", "Museu de História do Uzbequistão"] },
+          { "label": "Parques", "items": ["Parque Alisher Navoi", "Tashkent City Park"] },
+          { "label": "Nota",    "items": ["Preparar malas (comboio cedo)"] }
+        ]
+      },
+      {
+        "date": "Dia 4",
+        "city": "Tashkent → Samarcanda",
+        "transport": [
+          { "type": "comboio", "text": "08:37 → 11:46" }
+        ],
+        "details": [
+          { "label": "Manhã", "items": ["Ida de manhã para a estação de comboios (bilhete de 20€).", "Chegada ao hotel"] },
+          { "label": "Tarde", "items": ["Mausoléu Gur‑e Amir", "Passeio pelo centro histórico"] },
+          { "label": "Noite", "items": ["Registan iluminado (imperdível)"] }
+        ]
+      },
+      {
+        "date": "Dia 5",
+        "city": "Samarcanda (dia completo)",
+        "transport": [],
+        "details": [
+          { "label": "Manhã",  "items": ["Registan (madraças)", "Mesquita Bibi‑Khanym"] },
+          { "label": "Almoço", "items": ["Zona do Bazar Siab"] },
+          { "label": "Tarde",  "items": ["Shah‑i‑Zinda (ritmo calmo)", "Chá em chaikhana tradicional"] }
+        ]
+      },
+      {
+        "date": "Dia 6",
+        "city": "Samarcanda → Bucara",
+        "transport": [
+          { "type": "comboio", "text": "09:53 → 11:42" }
+        ],
+        "details": [
+          { "label": null, "items": ["Chegada ao hotel"] },
+          { "label": "Passeio", "items": ["Lyabi‑Hauz", "Nadir Divan‑Begi"] }
+        ]
+      },
+      {
+        "date": "Dia 7",
+        "city": "Bucara (dia completo)",
+        "transport": [],
+        "details": [
+          { "label": "Manhã", "items": ["Ark Fortress", "Bolo‑Haouz Mosque", "Po‑i‑Kalyan (minarete + mesquita)"] },
+          { "label": "Tarde", "items": ["Chor Minor", "Cúpulas comerciais (Toqi Zargaron, Toqi Sarrafon)"] },
+          { "label": "Noite", "items": ["Cidade iluminada"] }
+        ]
+      },
+      {
+        "date": "Dia 8",
+        "city": "Bucara → Khiva",
+        "transport": [
+          { "type": "voo", "text": "" },
+          { "type": "estrada", "text": "" }
+        ],
+        "details": [
+          { "label": null, "items": ["Chegada ao hotel"] },
+          { "label": "Tarde", "items": ["Primeira volta por Itchan Kala (cidade murada)"] },
+          { "label": "Noite", "items": ["Pôr do sol nas muralhas", "Jantar dentro da cidade antiga"] }
+        ]
+      },
+      {
+        "date": "Dia 9",
+        "city": "Khiva (dia completo)",
+        "transport": [],
+        "details": [
+          { "label": "Manhã", "items": ["Kunya Ark", "Minarete Kalta Minor", "Palácio Tash‑Hauli"] },
+          { "label": "Tarde", "items": ["Madrasa de Muhammad Amin Khan", "Minarete Islam Khodja (vista elevada)"] },
+          { "label": "Noite", "items": ["Passeio final pela cidade murada"] }
+        ]
+      },
+      {
+        "date": "Dia 10",
+        "city": "Khiva → Darvaza (Turcomenistão)",
+        "transport": [
+          { "type": "tour", "text": "" }
+        ],
+        "details": [
+          { "label": "Destaque", "items": ["Cratera de gás (Porta do Inferno)"] }
+        ]
+      },
+      {
+        "date": "Dia 11",
+        "city": "Darvaza → Ashgabat",
+        "transport": [
+          { "type": "tour", "text": "" }
+        ],
+        "details": [
+          { "label": "Cidade", "items": ["Monumentos de mármore · paisagem urbana singular"] }
+        ]
+      },
+      {
+        "date": "Dia 12",
+        "city": "Ashgabat → Mary · Merv (UNESCO)",
+        "transport": [
+          { "type": "tour", "text": "" }
+        ],
+        "details": [
+          { "label": "História", "items": ["Merv Antiga · Rota da Seda"] }
+        ]
+      },
+      {
+        "date": "Dia 13",
+        "city": "Mary → Bucara",
+        "transport": [
+          { "type": "tour", "text": "" }
+        ],
+        "details": [
+          { "label": null, "items": ["Chegada ao hotel"] }
+        ]
+      },
+      {
+        "date": "Dia 14",
+        "city": "Bucara → Tashkent → Lisboa",
+        "transport": [
+          { "type": "voo", "text": "" }
+        ],
+        "details": [
+          { "label": "Regresso", "items": ["Voo para Lisboa"] }
+        ]
+      }
+    ]
+  },
   "patagonia1": {
     "name": "Patagónia + Buenos Aires + Rio",
     "days": [
       {
-        "date": "03 novembro",
+        "date": "Dia 1",
         "city": "Viagem para o Chile",
         "transport": [
           {
@@ -15,13 +170,13 @@
           {
             "label": null,
             "items": [
-              "Viagem para Santiago, via São Paulo"
+              "Viagem para Santiago."
             ]
           }
         ]
       },
       {
-        "date": "04 novembro",
+        "date": "Dia 2",
         "city": "Visitar Santiago",
         "transport": [],
         "details": [
@@ -38,7 +193,7 @@
         ]
       },
       {
-        "date": "05 novembro",
+        "date": "Dia 3",
         "city": "Visitar Santiago",
         "transport": [],
         "details": [
@@ -53,7 +208,7 @@
         ]
       },
       {
-        "date": "06 novembro",
+        "date": "Dia 4",
         "city": "Viagem para Puerto Natales",
         "transport": [
           {
@@ -71,7 +226,7 @@
         ]
       },
       {
-        "date": "07 novembro",
+        "date": "Dia 5",
         "city": "Torres del Paine · Cavernas do Milodón",
         "transport": [
           {
@@ -94,7 +249,7 @@
         ]
       },
       {
-        "date": "08 novembro",
+        "date": "Dia 6",
         "city": "Balmaceda & Serrano (navegação)",
         "transport": [
           {
@@ -116,7 +271,7 @@
         ]
       },
       {
-        "date": "09 novembro",
+        "date": "Dia 7",
         "city": "Ida para Punta Arenas",
         "transport": [
           {
@@ -136,7 +291,7 @@
         ]
       },
       {
-        "date": "10 novembro",
+        "date": "Dia 8",
         "city": "Punta Arenas · Isla Magdalena",
         "transport": [],
         "details": [
@@ -149,7 +304,7 @@
         ]
       },
       {
-        "date": "11 novembro",
+        "date": "Dia 9",
         "city": "Punta Arenas → Puerto Williams",
         "transport": [
           {
@@ -167,7 +322,7 @@
         ]
       },
       {
-        "date": "12 novembro",
+        "date": "Dia 10",
         "city": "Puerto Williams → Ushuaia",
         "transport": [
           {
@@ -185,7 +340,7 @@
         ]
       },
       {
-        "date": "13 novembro",
+        "date": "Dia 11",
         "city": "Ushuaia",
         "transport": [],
         "details": [
@@ -198,7 +353,7 @@
         ]
       },
       {
-        "date": "14 novembro",
+        "date": "Dia 12",
         "city": "Ushuaia → El Calafate",
         "transport": [
           {
@@ -216,7 +371,7 @@
         ]
       },
       {
-        "date": "15 novembro",
+        "date": "Dia 13",
         "city": "El Calafate · Perito Moreno",
         "transport": [
           {
@@ -234,7 +389,7 @@
         ]
       },
       {
-        "date": "16 novembro",
+        "date": "Dia 14",
         "city": "El Calafate → Buenos Aires",
         "transport": [
           {
@@ -253,7 +408,7 @@
         ]
       },
       {
-        "date": "17 novembro",
+        "date": "Dia 15",
         "city": "Buenos Aires",
         "transport": [],
         "details": [
@@ -268,7 +423,7 @@
         ]
       },
       {
-        "date": "18 novembro",
+        "date": "Dia 16",
         "city": "Ida para o Rio de Janeiro",
         "transport": [
           {
@@ -286,7 +441,7 @@
         ]
       },
       {
-        "date": "19 novembro",
+        "date": "Dia 17",
         "city": "Rio de Janeiro",
         "transport": [],
         "details": [
@@ -302,7 +457,7 @@
         ]
       },
       {
-        "date": "20 novembro",
+        "date": "Dia 18",
         "city": "Rio de Janeiro",
         "transport": [],
         "details": [
@@ -316,7 +471,7 @@
         ]
       },
       {
-        "date": "21 novembro",
+        "date": "Dia 19",
         "city": "Rio de Janeiro",
         "transport": [],
         "details": [
@@ -331,7 +486,7 @@
         ]
       },
       {
-        "date": "22 novembro",
+        "date": "Dia 20",
         "city": "Rio de Janeiro",
         "transport": [],
         "details": [
@@ -346,7 +501,7 @@
         ]
       },
       {
-        "date": "23 novembro",
+        "date": "Dia 21",
         "city": "Regresso a Lisboa",
         "transport": [
           {
